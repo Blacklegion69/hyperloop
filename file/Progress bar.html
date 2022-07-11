@@ -1,0 +1,190 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="" content="">
+    <title></title>
+<style type="text/css" media="all">
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+  * {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Lobster', cursive;
+  }
+  body {
+    background-color: white;
+  }
+  .contain {
+    display: grid;
+    grid-template-columns: auto;
+    grid-column-gap: 10px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    margin: 20px auto;
+  }
+  .container {
+    width: 100%;
+   background-color: rgba(00,00,00,.5); 
+    /* 
+    background: -webkit-linear-gradient(top, rgba(00,00,00,0.5) 30%, rgba(00,00,00,0.1));
+    */
+    position: relative;
+    padding: 5px;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    text-align: center;
+    transition: .5s;
+  }
+  .container::before {
+    content: "  ";
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    background: -webkit-linear-gradient(top ,rgba(255,255,255,0.5) 20% , rgba(255,255,255,.4) 50%, rgba(255,255,255,0.0) 50%);
+    z-index: 10;
+    
+  } 
+  
+  .name {
+    width: 200px;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+    padding: 5px;
+    z-index: 11;
+    font-size: 25px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .box {
+    width: 300px;
+    height: 30px;
+    background-color: #a9a9a9;
+    border-radius: 20px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border: 1px solid black;
+  }
+  span {
+    content: "  ";
+    position: absolute;
+    width: 75%;
+    height: 100%;
+    background: -webkit-linear-gradient(45deg, #ff00c7 , #ffbb00);
+    border-radius: 20px;
+    left: 0%;
+    
+    animation: animate 2s ease-in-out forwards;
+  }
+  @keyframes animate {
+    from {
+      width: 0%;
+    }
+  }
+  
+  p {
+    width: 100px;
+    z-index: 11;
+    font-weight: bold;
+    color: 10;
+    padding: 5px;
+    font-size: 25px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+ .contain:hover .container{
+   
+    opacity: 50%;
+  }
+  .contain .container:hover{
+    opacity: 100%;
+    transform: scale(1.1);
+  }
+  
+  @media (max-width:770px) {
+    body {
+      background-color: #8c8c8c;
+    }
+    .container  {
+      width: 300px;
+      overflow: hidden;
+    }
+  .contain {
+    display: grid;
+    grid-template-columns: auto;
+    grid-column-gap: 10px;
+  }
+  }
+</style>
+  </head>
+  <body>
+    <div class="contain">
+      
+       <div class="container">
+         <div class="name">Html</div>
+         <div class="box">
+           <span style="width:100%;"></span>
+         </div>
+         <p>
+           100%
+         </p>
+       </div>
+       
+       <div class="container">
+         <div class="name">Css</div>
+         <div class="box">
+           <span style="width:70%;"></span>
+         </div>
+         <p>
+           70%
+         </p>
+       </div>
+       <div class="container">
+         <div class="name">JavaScript</div>
+         <div class="box">
+           <span style="width:1%;"></span>
+         </div>
+         <p>
+           1%
+         </p>
+       </div>
+       <div class="container">
+         <div class="name">Bootstrap</div>
+         <div class="box">
+           <span style="width:10%;"></span>
+         </div>
+         <p>
+           10%
+         </p>
+       </div>
+       <div class="container">
+         <div class="name">Photoshop</div>
+         <div class="box">
+           <span style="width:60%;"></span>
+         </div>
+         <p>
+           60%
+         </p>
+       </div>
+       <div class="container">
+         <div class="name">Photography</div>
+         <div class="box">
+           <span style="width:50%;"></span>
+         </div>
+         <p>
+           50%
+         </p>
+       </div>
+    </div>
+  </body>
+</html>

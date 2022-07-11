@@ -1,0 +1,166 @@
+<html> 
+ <head> 
+  <meta http-equiv="content-type" content="text/html; charset=utf-8"> 
+  <meta name="" content=""> 
+  <link rel="preconnect" href="https://fonts.googleapis.com"> 
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&amp;family=Lobster&amp;display=swap" rel="stylesheet"> 
+  <link rel="preconnect" href="https://fonts.googleapis.com"> 
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&amp;display=swap" rel="stylesheet"> 
+  <title></title> 
+  
+  
+  <style type="text/css" media="all">
+  * {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: -webkit-linear-gradient(left, rgb(255,98,0) 50% , rgb(0,232,255) 50%);
+  }
+  span {
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    background-color: rgb(213,0,255);
+    z-index: -1;
+  }
+  .fromsection {
+    width: 350px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255,255,255,0.5);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0);
+    backdrop-filter: blur(5.6px);
+    -webkit-backdrop-filter: blur(5.6px);
+    overflow: hidden;
+    border-radius: 10px;
+    border-top: 2px solid rgba(255,255,255,1);
+    border-left: 2px solid rgba(255,255,255,1);
+  }
+  .textu {
+    color: white;
+    width: 200px;
+    height: 50px;
+    display: block;
+    position: relative;
+    font-size: 25px;
+    font-weight: bold;
+    padding-top: 13px;
+    margin: 20px auto;
+    border-bottom: 4px solid rgba(00,00,00,1);
+    border-top: 4px solid rgba(00,00,00,1);
+    border-radius: 6px;
+    text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
+    -webkit-text-stroke: 0.5px rgb(213,0,255);
+  }
+  .inputt {
+    width: 100%;
+    height: auto;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    
+  }
+  .box {
+    position: relative;
+    transition: 1s;
+  }
+  label {
+    display: block;
+    padding: 10px;
+    position: relative;
+    font-size: 15px;
+    font-weight: bold;
+  }
+  input {
+   color: black;
+    width: 250px;
+    height: 35px;
+    display: block;
+    position: relative;
+    outline: none;
+    background: rgba(255,255,255,0.5) ;
+    text-align: center;
+    border: 1px solid black;
+    margin: 10px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Lobster', cursive;
+    transition: 0.5s;
+  }
+  input:hover {
+    box-shadow: 1px 1px 10px 1px black;
+  }
+  input[type="submit"] {
+    width: 200px;
+    height: 30px;
+    color: black;
+    display: block;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    background-color: white;
+    transition: 0.5s;
+    border-radius: 20px;
+  }
+  input[type="submit"]:active {
+    box-shadow: inset 1px 1px 10px 1px black;
+  }
+  @media (max-width:770px) {
+    .textu {
+      margin: 20px auto;
+    }
+    .fromsection {
+      width: 700px;
+      transform: scale(0.8);
+    }
+    .inputt {
+      position: relative;
+      grid-template-columns: auto;
+    }
+    input[type="submit"] {
+      font-size: 25px;
+      width: 300px;
+      height: 50px;
+      border-radius: 0px;
+      letter-spacing: 2px;
+    }
+  }
+</style> 
+ </head> 
+ <body> <span></span> 
+  <section class="fromsection"> 
+   <div class="textu">
+     Form Design 
+   </div> 
+   <div class="inputt"> 
+    <div class="box"> <label for="First">First name: <input type="text" name="" id="" placeholder="Enter your first name " value=""> </label> 
+    </div> 
+    <div class="box"> <label for="Last">Last name: <input type="text" name="" id="" placeholder="Enter your last name " value=""> </label> 
+    </div> 
+    <div class="box"> <label for="Usr">Username: <input type="text" name="" id="" placeholder="Enter your username " value=""> </label> 
+    </div> 
+    <div class="box"> <label for="Email">Email Address: <input type="text" name="" id="" placeholder="Enter your password " value=""> </label> 
+    </div> 
+    <div class="box"> <label for="Email">Date of birth: <input type="date" name="" id="" value=""> </label> 
+    </div> 
+    <div class="box"> <label for="number">Phone number: <input type="number" name="" id="" placeholder="Enter your phone number " value=""> </label> 
+    </div> 
+    <div class="box"> <label for="number">password: <input type="password" name="" id="" placeholder="Enter your password " value=""> </label> 
+    </div> 
+    <div class="box"> <label for="number">Confirm Password: <input type="password" name="" id="" placeholder="Confirm your password " value=""> </label> 
+    </div> 
+   </div> 
+   <input type="submit" value="login"> 
+  </section> 
+ </body>
+</html>

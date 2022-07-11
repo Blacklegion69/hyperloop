@@ -1,0 +1,95 @@
+<html>
+ <head> 
+  <title>
+      Agent 71
+    </title>
+ </head> 
+ <body> 
+  <div class="dotanimation"> 
+   <div class="dot1" id="dot">
+     ■ 
+   </div> 
+   <div class="dot2" id="dot">
+     ■ 
+   </div> 
+   <div class="dot3" id="dot">
+     ■ 
+   </div> 
+   <div class="dot4" id="dot">
+     ■ 
+   </div> 
+   <div class="dot5" id="dot">
+     ■ 
+   </div> 
+   <div class="dot6" id="dot">
+     ■ 
+   </div> 
+   <div class="dot7" id="dot">
+     ■ 
+   </div> 
+  </div>
+  <style>
+    body {
+    background-color: gold;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: fixed;
+ }
+ .dotanimation {
+   margin: auto;
+   position: relative;
+   text-align: center;
+   display: block;
+ }
+ #dot {
+   width: 10px;
+   height: 400px;
+   display: inline-block;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   border: 1px solid black;
+ }
+ .dotanimation > div {
+   display: inline-block;
+   text-align: center;
+   color: gold;
+   font-size: 20px;
+   padding: 0px;
+ }
+ .dot1 {
+   animation: loading .5s infinite linear alternate ;
+ }
+ .dot2 {
+   animation: loading .5s infinite linear alternate .1s;
+ }
+ .dot3 {
+   animation: loading .5s infinite linear alternate .2s;
+ }
+ .dot4 {
+   animation: loading .5s infinite linear alternate .3s;
+ }
+ .dot5 {
+   animation: loading .5s infinite linear alternate .4s;
+ }
+ .dot6 {
+   animation: loading .5s infinite linear alternate .5s;
+ }
+ .dot7 {
+   animation: loading .5s infinite linear alternate .5s;
+ }
+ @keyframes loading {
+   100% {
+     color: #222;
+     background-color: #222;
+     transform rotatex(90deg);
+   }
+ }
+ .para {
+   color: #222;
+   text-align: center;
+   font-size: 90px;
+ }
+  </style>
+ </body>
+</html>

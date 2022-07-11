@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+ <head> 
+  <title></title> 
+  <link rel="preconnect" href="https://fonts.googleapis.com"> 
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&amp;family=Open+Sans:wght@700&amp;display=swap" rel="stylesheet"> 
+ </head> 
+ <body> 
+  <section class="threesec"> 
+   <div class="container"> 
+    <div class="hovereffect">
+      Home 
+     <div class="anim"></div> 
+    </div> 
+    <div class="hovereffect">
+      Services 
+     <div class="anim"></div> 
+    </div> 
+    <div class="hovereffect">
+      Contact 
+     <div class="anim"></div> 
+    </div> 
+    <div class="hovereffect">
+      Menu 
+     <div class="anim"></div> 
+    </div> 
+    <div class="hovereffect">
+      Other 
+     <div class="anim"></div> 
+    </div> 
+    <div class="hovereffect">
+      Setting 
+     <div class="anim"></div> 
+    </div> 
+   </div> 
+  </section>
+ <style>
+ * {
+   margin: 0px;
+   padding: 0px;
+   font-weight: bold;
+ }
+body {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background: -webkit-repeating-linear-gradient(46deg , skyblue , orange , blue 2%);
+}
+.threesec {
+  margin-top: 100px;
+}
+.hovereffect {
+  width: 80%;
+  display: block;
+  position: relative;
+  margin: .1px auto;
+  text-align: center;
+  color: black;
+  padding: 10px;
+  background: rgba( 225, 225, 225, 0.4 );
+  backdrop-filter: blur( 2.5px );
+  -webkit-backdrop-filter: blur( 2.5px );
+  border-radius: 0px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  font-family: 'Alfa Slab One', cursive;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 30px;
+  transition: 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.hovereffect:hover {
+  background: rgba( 225, 225, 225, 1.9);
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.30 );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  transform: scale(1.05);
+  opacity: 100%;
+  top: -1px;
+  overflow: hidden;
+  z-index: 80;
+}
+.anim {
+  width: .00010%;
+  height: 8px;
+  display: block;
+  margin: auto;
+  background-color: rgb(20,54,80);
+  box-shadow: inset 5px 5px 16px #0000ba,
+            inset -5px -5px 16px #0000ff;
+  position: relative;
+  transition: 0.6s cubic-bezier(0.68, -1.55, 0.265, 1.55);
+  border-radius: 10px;
+}
+.hovereffect:hover .anim {
+  width: 50%;
+  height: 8px;
+  display: block;
+  margin: auto;
+  background-color: rgb(20,54,80);
+  box-shadow: inset 5px 5px 16px #0000ba,
+            inset -5px -5px 16px #0000ff;
+  overflow: hidden;
+  border-radius: 10px;
+  
+}
+ </style>
+ </body>
+</html>

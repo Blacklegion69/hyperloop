@@ -1,0 +1,245 @@
+<!doctype html>
+<html>
+ <head> 
+  <link rel="preconnect" href="https://fonts.googleapis.com"> 
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+  <link href="https://fonts.googleapis.com/css2?family=Monoton&amp;display=swap" rel="stylesheet"> 
+  <link rel="preconnect" href="https://fonts.googleapis.com"> 
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+  <link href="https://fonts.googleapis.com/css2?family=Coiny&amp;display=swap" rel="stylesheet"> 
+  <title>
+      Glassmorphism Generator
+    </title> 
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> 
+ </head> 
+ <body onload="change()"> 
+  <div class="glass">
+    BLACK 
+   <br>LIGHT 
+  </div> 
+  <table> 
+   <tbody> 
+    <tr> 
+     <td>Color (RGB)</td> 
+     <td></td> 
+    </tr> 
+    <tr> 
+     <td><input id="red" type="range" min="0" max="255" value="20" oninput="change()" class="range"></td> 
+     <td class="red"></td> 
+    </tr> 
+    <tr> 
+     <td> <input id="green" type="range" min="0" max="255" value="54" oninput="change()" class="range"></td> 
+     <td class="green"></td> 
+    </tr> 
+    <tr> 
+     <td> <input id="blue" type="range" min="0" max="255" value="80" oninput="change()" class="range"></td> 
+     <td class="blue"></td> 
+    </tr> 
+    <tr> 
+     <td colspan="2">Blur</td> 
+    </tr> 
+    <tr> 
+     <td> <input id="blur" type="range" min="0" max="200" value="30" oninput="change()" class="range"></td> 
+     <td class="blur"></td> 
+    </tr> 
+    <tr> 
+     <td colspan="2">Color intensity</td> 
+    </tr> 
+    <tr> 
+     <td><input id="int" type="range" min="0" max="100" value="10" oninput="change()" class="range"></td> 
+     <td class="int"></td> 
+    </tr> 
+    <tr> 
+     <td colspan="2">Box shadow</td> 
+    </tr> 
+    <tr> 
+     <td> <input id="bsh" type="range" min="0" max="100" value="30" oninput="change()" class="range"></td> 
+     <td class="bsh"></td> 
+    </tr> 
+   </tbody> 
+  </table> 
+  <br> 
+  <div class="lastbox"> 
+   <div onclick="copy()" id="code"></div> 
+   <textarea id="cc" readonly></textarea> 
+  </div> 
+  <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+body {
+  /*
+    background: url("https://dl.dropbox.com/s/slo5uxlnfww97tv/IMG_20210216_190013_995.jpg?dl=0") no-repeat center center fixed;
+  */
+    background-image: url('Image.jpg');
+    background-size: cover;
+    text-align: center;
+    font-family: 'Coiny', cursive;
+    margin-top: 5px;
+}
+* {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+.glass {
+    background: rgba( 255, 255, 255, 0.05 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur(0px);
+    border-radius: 10px;
+    border: 1px solid rgb(0,236,255);
+    display: inline-block ;
+    font-size: 40px;
+    text-align: center;
+    justify-content: center;
+    padding: 90px;
+    margin: 15px;
+    font-family: 'Monoton', cursive;
+}
+
+
+
+table {
+    width: 320px;
+    height: 290px;
+    background: rgba( 255, 255, 255, 0.05 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135,0.5);
+    backdrop-filter: blur(50px);
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.2 );
+    display:block;
+    padding: 5px;
+    border: 2px double rgb(0,255,186);
+    font-family: 'Coiny', cursive;
+    margin: auto;
+}
+
+td {
+    text-align: center;
+    font-family: 'Coiny', cursive;
+    
+}
+table tr:first-child td:last-child {
+    border-radius: 10px;
+    font-family: 'Coiny', cursive;
+    
+}
+
+tr td:last-child {
+    width: 40px;
+    font-family: 'Coiny', cursive;
+}
+
+input[type=range] {
+    -webkit-appearance: none;
+    width: 250px;
+    height: 8px;
+    border-radius: 11px;
+    background: rgba( 255, 255, 255, 0.05 );
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.5);
+    backdrop-filter: blur(40px);
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.2 );
+    font-family: 'Coiny', cursive;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    font-family: 'Coiny', cursive;
+  
+}
+
+input[type=range]:focus {
+    outline: none;
+    font-family: 'Coiny', cursive;
+}
+
+input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    height: 15px;
+    border-radius: 100%;
+    width: 15px;
+    cursor: pointer;
+    padding: 5px;
+    background: rgba( 255, 255, 255,0.9);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.2 );
+    font-family: 'Coiny', cursive;
+}
+
+#code {
+    font-size: 11px;
+    font-weight: smaller ;
+    color: black;
+    text-align: left;
+    display: block;
+    margin: auto;
+    width: 300px;
+    background: white;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    border: 6px double rgb(0,255,202);
+    padding: 10px;
+    font-family: 'Coiny', cursive;
+}
+
+#cc {
+    opacity:0;
+    height:0px;
+}
+
+    </style> 
+  <script>
+      var code;
+function change() {
+    var red = $("#red").val();
+    var green = $("#green").val();
+    var blue = $("#blue").val();
+    var blur = $("#blur").val()/10;
+    var ins = $("#int").val()/100;
+    var bsh = $("#bsh").val()/100;
+    var color = red+", "+green+", "+blue;
+    $(".red").html(red);
+    $(".green").html(green);
+    $(".blue").html(blue);
+    $(".blur").html(blur);
+    $(".int").html(ins);
+    $(".bsh").html(bsh);
+    
+    $("table tr:nth-child(1) td:nth-child(2)").css("background-color", `rgb(`+color+`)`);
+    
+    $(".glass").css("backdrop-filter", "blur("+blur+"px)");
+    $(".glass").css("box-shadow", `0 8px 32px 0 rgba(${color},${bsh})`);
+    $(".glass").css("background", "rgba("+color+","+ins+")");
+    code = `
+    background: rgba(${color}, ${ins});<br/>
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, ${bsh});<br/>
+    backdrop-filter: blur(${blur}px);<br/>
+    -webkit-backdrop-filter: blur(${blur}px);<br/>
+    border-radius: 10px;<br/>
+    border: 1px solid rgba(255, 255, 255, 0.2)
+    `;
+    $("#code").html(code);
+    
+}
+  
+function copy() {
+    var cc = document.getElementById("cc");
+    $("#cc").val($("#code").text());
+    cc.select()
+    cc.setSelectionRange(0, 99999)
+    document.execCommand('copy');
+    $('#code').html("Copied!");
+    $('#code').css("font-size", "20px");
+    $('#code').css("text-align", "center");
+    setTimeout((function(){
+        $('#code').html(code);
+    $('#code').css("font-size", "11px");
+    $('#code').css("text-align", "left");
+        
+        }), 1500);
+    
+  }
+
+    </script> 
+ </body>
+</html>

@@ -1,0 +1,171 @@
+<!doctype html>
+<html>
+ <head> 
+  <title>Hexagon Animation</title> 
+ </head> 
+ <body>
+   <section class="hovereffect">
+     <div class="box">
+       <div class="hover1">
+         <a href="#">Menu</a>
+       </div>
+       <div class="anim"></div>
+     </div>
+     
+     <div class="box1">
+       <div class="hover2">
+         <a href="#">Contact</a>
+       </div>
+       <div class="anim1"></div>
+     </div>
+     
+     <div class="box2">
+       <div class="hover3">
+         <a href="#">Feedback</a>
+       </div>
+       <div class="anim2"></div>
+     </div>
+   </section>
+   <style>
+   body {
+     background-color: white;
+   }
+   .hovereffect {
+     display: block;
+     margin: auto;
+     width: 100%;
+     
+   }
+     .box {
+       display: block;
+       margin: 60px auto;
+       text-align: center;
+       align-items: center;
+       padding: 10px;
+       width: 50%;
+       backdrop-filter: blur( 5.5px );
+       -webkit-backdrop-filter: blur( 5.5px );
+       border-radius: 10px;
+       border: 1px solid rgba( 255, 255, 255, 0.18 );
+       background: #e0e0e0;
+       box-shadow:  5px 5px 10px #808080,
+             -5px -5px 10px #ffffff;
+       transition: 1s;
+       overflow: hidden;
+       
+     }
+     div.hover1 > a {
+       display: inline;
+       text-align: center;
+       text-decoration: none;
+       text-decoration-style: none;
+     }
+     .hover1 {
+       overflow: hidden;
+     }
+     .anim {
+       width: .000001%;
+       height: 3px;
+       display: block;
+       margin: auto;
+       background-color: blue;
+       position: relative;
+       transition: .5s;
+     }
+     .box:hover .anim {
+       width: 60%;
+       height: 3px;
+       display: block;
+       margin: auto;
+       background-color: blue;
+       overflow: hidden;
+     }
+     .box1 {
+       display: block;
+       margin: 60px auto;
+       text-align: center;
+       width: 50%;
+       align-items: center;
+       padding: 10px;
+       
+       backdrop-filter: blur( 5.5px );
+       -webkit-backdrop-filter: blur( 5.5px );
+       border-radius: 10px;
+       border: 1px solid rgba( 255, 255, 255, 0.18 );
+       background: #e0e0e0;
+       box-shadow:  5px 5px 10px #808080,
+             -5px -5px 10px #ffffff;
+       transition: 1s;
+       overflow: hidden;
+       
+     }
+     div.hover2 > a {
+       display: inline;
+       text-align: center;
+       text-decoration: none;
+       text-decoration-style: none;
+     }
+     .hover2 {
+       overflow: hidden;
+     }
+     .anim1 {
+       width: 50%;
+       height: 3px;
+       display: block;
+       margin-left: -100%;
+       background-color: blue;
+       position: relative;
+       transition: .5s;
+     }
+     .box1:hover .anim1 {
+       width: 50%;
+       height: 3px;
+       display: block;
+       margin-left: 50px;
+       background-color: blue;
+       overflow: hidden;
+     }
+     
+     
+     
+     .box2 {
+       display: block;
+       margin: 60px auto;
+       text-align: center;
+       width: 50%;
+       align-items: center;
+       padding: 10px;
+       backdrop-filter: blur( 5.5px );
+       -webkit-backdrop-filter: blur( 5.5px );
+       border-radius: 10px;
+       border: 1px solid rgba( 255, 255, 255, 0.18 );
+       background: #e0e0e0;
+       box-shadow:  5px 5px 10px #808080,
+             -5px -5px 10px #ffffff;
+       transition: 0.5s;
+       overflow: hidden;
+     }
+     .hover3 {
+       overflow: hidden;
+     }
+     div.hover3 > a {
+       display: inline;
+       text-align: center;
+       text-decoration: none;
+       text-decoration-style: none;
+     }
+     .anim2 {
+       width: 50%;
+       height: 3px;
+       display: block;
+       margin-right: 0%;
+       background-color: blue;
+    
+       transition: .5s;
+     }
+     .box2:hover .anim2 {
+       margin-right: 600px;
+     }
+   </style>
+ </body>
+</html>

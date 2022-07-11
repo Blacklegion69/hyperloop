@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page Title</title>
+    </head>
+    <body>
+        <div class="box1">
+            <div class="box2">
+                <div class="box3">
+                    
+                </div>
+            </div>
+        </div>
+          <div class="box4"></div>
+          <div class="box5"></div>
+<style>
+  body {
+    background-color:rgb(14,54,80);
+}
+.box1 {
+    width:200px;
+    height:200px;
+    border-radius:100%;
+    margin:auto;
+    background-color:none;
+    border:10px solid rgb(14,54,80);
+    border-top:10px solid rgb(0,255,220);
+    border-bottom:10px solid rgb(0,255,220);
+    animation:jaber 1s linear infinite;
+    animation-direction:reverse;
+}
+@keyframes jaber{
+    0%{
+        transform:rotate(0deg);
+    }
+    100%{
+        transform:rotate(360deg);
+    }
+}
+.box2{
+    width:180px;
+    margin:0px;
+    height:180px;
+    border-radius:100%;
+    border:10px solid rgb(14,54,80);
+    border-left:10px solid rgb(190,255,0);
+    border-right:10px solid rgb(190,255,0);
+    animation:joking 2s linear infinite;
+}
+@keyframes joking{
+    0%{
+        transform:rotate(0deg);
+    }
+    100%{
+        transform:rotate(360deg);
+    }
+}
+.box3{
+    width:160px;
+    margin:0px;
+    height:160px;
+    border-radius:100%;
+    border:10px solid rgb(14,54,80);
+    border-bottom:10px solid rgb(255,0,83);
+    border-top:10px solid rgb(255,0,83);
+    animation:jok 1s linear infinite;
+}
+@keyframes jok{
+    0%{
+        transform:rotate(0deg);
+    }
+    100%{
+        transform:rotate(360deg);
+    }
+}
+.box4 {
+    width:200px;
+    height:200px;
+    background-color:rgb(14,54,80);
+    border-top:9px double rgb(14,238,205);
+    border-radius:100%;
+    margin:auto;
+    position:relative ;
+    animation:nothing 1s linear infinite ;
+}
+@keyframes nothing {
+    100%{
+        transform:rotate(360deg);
+    }
+}
+.box5 {
+    width:100px;
+    height:100px;
+    border:1px solid rgb(30,255,1);
+    border-radius:100%;
+    background-color:rgb(14,54,80);
+    box-shadow:50px 50px 1px 1px rgb(0,255,202),-50px -50px 1px 1px rgb(255,0,252);
+    margin:auto;
+    animation:box5 1s linear infinite ;
+    margin-top:90px;
+}
+@keyframes box5 {
+    100%{
+        transform:rotate(360deg);
+    }
+}
+</style>
+    </body>
+</html>

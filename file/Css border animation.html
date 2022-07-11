@@ -1,0 +1,70 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="" content="">
+    <title></title>
+<style type="text/css" media="all">
+@import url('https://fonts.googleapis.com/css2?family=Hanalei+Fill&display=swap');
+  * {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+  body {
+    background-color: rgba(18,28,58,1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .box {
+    display: flex;
+    width: 250px;
+    height: 250px;
+    position: relative;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    background: black;
+  }
+  .box::before {
+      content: "  ";
+      width: 100px;
+      position: absolute;
+      background: -webkit-repeating-linear-gradient(45deg ,rgb(0,204,255), rgb(255,0,252) 12px);
+      height: 350px;
+      animation: animate 4s linear infinite;
+    }
+    @keyframes animate {
+      100% {
+        transform: rotatez(360deg);
+        filter: hue-rotate(360deg);
+      }
+    }
+  .box::after {
+    content: "  ";
+    background: rgba(18,28,58,1);
+    position: absolute;
+    inset: 4px;
+  }
+  .box h1 {
+    color: transparent;
+    font-size: 10em;
+    position: relative;
+    z-index: 10;
+    background: -webkit-linear-gradient(45deg , rgb(76,226,253) , rgb(249,86,203));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-stroke: 1px gold;
+    font-family: 'Hanalei Fill', cursive;
+    font-weight: bold;
+  }
+</style>
+  </head>
+  <body>
+    <div class="box">
+      <h1>
+        02
+      </h1>
+    </div>
+  </body>
+</html>

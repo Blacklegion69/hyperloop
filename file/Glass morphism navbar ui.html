@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+ <head> 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Lato&family=Lobster&family=Montserrat:wght@700&family=Open+Sans&family=Roboto&display=swap" rel="stylesheet">
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>
+    Glass Morphism Dashboard Navbar UI Design
+  </title> 
+  <!-- fontawesome cdn --> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous"> 
+  <!-- my css --> 
+  <link rel="stylesheet" href="style.css"> 
+ </head> 
+ <body> 
+  <nav class="navbar" id="nav"> 
+   <button class="toggle-menu" id="menu"> <i class="fas fa-bars"></i> </button> 
+   <div class="nav-items"> 
+    <div class="admin-profile"> 
+     <div class="icons"> 
+      <img src="https://dl.dropbox.com/s/wp2bd2jrk99yzz3/20210808_222710.jpg?dl=0" alt="admin"> 
+     </div> 
+     <span>BLACK LIGHT</span> 
+    </div> 
+    <div class="item-list"> 
+     <div class="icons"> 
+      <i class="fas fa-tachometer-alt"></i> 
+     </div> 
+     <span>Dashboard</span> 
+    </div> 
+    <div class="item-list"> 
+     <div class="icons"> 
+      <i class="fas fa-wallet"></i> 
+     </div> 
+     <span>Coupons</span> 
+    </div> 
+    <div class="item-list"> 
+     <div class="icons"> 
+      <i class="far fa-comment-dots"></i> 
+     </div> 
+     <span>Messages</span> 
+    </div> 
+    <div class="item-list"> 
+     <div class="icons"> 
+      <i class="fas fa-users"></i> 
+     </div> 
+     <span>Team</span> 
+    </div> 
+    <div class="item-list"> 
+     <div class="icons"> 
+      <i class="fas fa-list"></i> 
+     </div> 
+     <span>Userlist</span> 
+    </div> 
+    <div class="logout"> 
+     <div class="icons"> 
+      <i class="fas fa-sign-out-alt"></i> 
+     </div> 
+     <span>Logout</span> 
+    </div> 
+   </div> 
+  </nav> 
+  <!-- javascript --> 
+  <script src="main.js"></script> 
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    font-family: 'Raleway', sans-serif;
+    transition: 0.4s;
+}
+
+body {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    min-height: 100vh;
+    padding: 30px;
+    background-image: url("https://dl.dropbox.com/s/o5evd0whd3s14h8/IMG_20210216_190037_408.jpg?dl=0");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 90vh;
+    background-color: #ffffff40;
+    backdrop-filter: blur(20px);
+    border: 2px solid #ffffff30;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 15px -5px #00000030;
+    padding: 15px;
+}
+
+.toggle-menu {
+    position: absolute;
+    top: 15px;
+    left: 25px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.toggle-menu i {
+    color: #81305d;
+    font-size: 2.5em;
+}
+
+.nav-items {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 65vh;
+}
+
+.admin-profile,
+.item-list,
+.logout {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.item-list:hover,
+.logout:hover {
+    background-color: #ffffff60;
+}
+
+.admin-profile {
+    margin: 40px 0;
+    background-color: #ffffff70;
+}
+
+.logout {
+    margin-top: 30px;
+}
+
+.icons {
+    width: 50px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.icons img {
+    width: 40px;
+    height: 40px;
+}
+
+.icons i {
+    font-size: 2em;
+    color: #81305d;
+}
+
+span {
+    display: flex;
+    font-size: 1.5em;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #81305d;
+    margin-left: 10px;
+    font-family: 'Anton', sans-serif;
+    font-family: 'Lato', sans-serif;
+    font-family: 'Lobster', cursive;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+</style> 
+  <script>
+var nav = document.getElementById("nav");
+var menu = document.getElementById("menu");
+var span = document.getElementsByTagName("span");
+
+menu.addEventListener("click", () => {
+    if (nav.style.width == "85px") {
+        nav.style.width = "300px"
+        for (i = 0; i < 7; i++) {
+            span[i].style.display = "block"
+        }
+    } else {
+        nav.style.width = "85px"
+        for (i = 0; i < 7; i++) {
+            span[i].style.display = "none"
+        }
+    }
+});
+</script> 
+ </body>
+</html>

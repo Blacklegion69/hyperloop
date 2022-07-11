@@ -1,0 +1,116 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Multi orbit rotate animation</title>
+<style type="text/css" media="all">
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+  }
+  body {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+  }
+  section {
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  .box {
+    width: 400px;
+    height: 400px;
+    border: 8px dotted #f0f;
+    border-radius: 50%;
+    position: absolute;
+  }
+  
+  .box1 {
+    animation: box1animation 4s linear infinite;
+  }
+  .box3 {
+    animation: box1animation 3.5s linear infinite;
+  }
+  @keyframes box1animation {
+    100% {
+      transform: rotatex(360deg) rotatez(360deg);
+      filter: hue-rotate(360deg);
+    }
+  }
+  .box2 {
+    animation: box2animation 3s linear infinite;
+  }
+  .box4 {
+    animation: box2animation 2.5s linear infinite;
+  }
+  @keyframes box2animation {
+    100% {
+      transform: rotatey(360deg) rotatez(360deg);
+      filter: hue-rotate(360deg);
+    }
+  }
+  .second_section {
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    transform: rotatez(45deg);
+  }
+  
+  .input_box {
+    width: 200px;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 10px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  
+</style>
+  </head>
+  <body>
+    <div class="input_box">
+      <h1>
+        Border Width
+      </h1>
+      <input type="range" id="range" min="1" max="20" value="0.3" step="0.03" />
+    </div>
+    <section>
+      <div class="box box1" id="one"></div>
+      <div class="box box2"></div>
+      <div class="second_section">
+        <div class="box box3"></div>
+        <div class="box box4"></div>
+      </div>
+    </section>
+<script type="text/javascript" charset="utf-8">
+  const item = document.querySelectorAll(".box");
+  const range = document.querySelectorAll("#range")[0];
+  
+  range.addEventListener("input",function(){
+  for (i=0; i<item.length; i++) {
+    var x = range.value;
+    item[i].style.border = `${x}px dotted #f0f`;
+  }
+  })
+  
+  
+</script>
+  </body>
+</html>

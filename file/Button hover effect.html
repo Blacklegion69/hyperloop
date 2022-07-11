@@ -1,0 +1,66 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="" content="">
+    <title></title>
+<style type="text/css" media="all">
+  * {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+  body {
+    background-color: rgba(18,28,58,1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  a {
+    position: relative;
+    z-index: 10;
+    background: -webkit-linear-gradient(45deg , rgb(255,255,255) , rgb(0,204,255));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    text-decoration: none;
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  .box {
+    color: white;
+    font-size: 2em;
+    border: .1px solid gold;
+    padding-right: 20px;
+    padding-left: 20px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .box::before {
+    content: "  ";
+    width: 0%;
+    height: 100%;
+    transform: rotatez(180deg);
+    background-color: rgb(0,255,158);
+    position: absolute;
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    left: 0px;
+  }
+  .box:hover a {
+    -webkit-text-stroke: 1px black;
+    text-stroke: 1px black;
+    color: black;
+  }
+  .box:hover::before {
+    width: 100%;
+    border: .1px solid rgb(0,255,159);
+  }
+</style>
+  </head>
+  <body>
+    <div class="box">
+      <a href="#">Contact</a>
+    </div>
+  </body>
+</html>

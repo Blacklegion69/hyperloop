@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Hexagon Animation</title>
+</head>
+
+<body>
+
+  <div class="container">
+      <div class="hexagon">
+        <img src="https://dl.dropbox.com/s/wp2bd2jrk99yzz3/20210808_222710.jpg?dl=0">
+      </div>
+  </div>
+  <style>
+body {
+  background: white;
+}
+img {
+  width: 100%;
+  
+}
+.hexagon {
+  display: block;
+  position: relative;
+  background: gold;
+  height: 110px;
+  width: 100px;
+  margin: auto;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+.hexagon:active {
+  transition: 0s;
+  transform: scale(1.2);
+}
+  </style>
+</body>
+
+</html>

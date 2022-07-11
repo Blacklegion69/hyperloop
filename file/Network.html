@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="" content="">
+    <title></title>
+<style type="text/css" media="all">
+  * {
+    margin: 0px;
+    padding: 0px;
+  }
+  body {
+    background: #b5b5b5;
+  }
+  .container {
+    margin: 20px;
+    
+  }
+  .box {
+    width: 10px;
+    height: 100px;
+    background: black;
+    border: 1px solid white;
+    display: inline-block;
+    margin: 10px 10px 10px 10px;
+    justify-content: center;
+  }
+  .box1 {
+    height: 25px;
+    animation: animate 2s linear infinite 0s;
+  }
+  .box2 {
+    height: 50px;
+    animation: animate 2s linear infinite 1s;
+  }
+  .box3 {
+    height: 75px;
+    animation: animate 2s linear infinite 2s;
+  }
+  @keyframes animate {
+    100% {
+      background: gold;
+    }
+  }
+</style>
+  </head>
+  <body>
+    <div class="container">
+      
+      <div class="box box1"></div>
+      <div class="box box2"></div>
+      <div class="box box3"></div>
+      
+    </div>
+  </body>
+</html>

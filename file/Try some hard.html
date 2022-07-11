@@ -1,0 +1,210 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="" content="">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <title></title>
+<style type="text/css" media="all">
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+  * {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+  body {
+    background-color rgba(18,28,58,1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .bolx {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+  }
+  .bolx::before {
+      content: "  ";
+      width: 100px;
+      position: absolute;
+      background: -webkit-linear-gradient(rgb(0,204,255), rgb(255,0,252));
+      height: 950px;
+      animation: animate 4s linear infinite;
+    }
+    @keyframes animate {
+      100% {
+        transform: rotatez(360deg);
+        filter: hue-rotate(360deg);
+      }
+    }
+  .bolx::after {
+    content: "  ";
+    background: rgba(18,28,58,1);
+    position: absolute;
+    inset: 65px;
+  }
+  .bolx footer {
+    position: relative;
+    z-index: 10;
+  }
+  
+  
+  footer {
+    display: grid;
+    z-index: 1;
+    position: relative;
+    grid-template-columns: auto auto auto auto;
+    background: -webkit-linear-gradient(45deg , rgb(255,255,255) , rgb(99,217,247));
+    justify-content: center;
+    grid-column-gap: 5px;
+    grid-row-gap: .5px;
+    margin: 5px;
+  }
+  h1 {
+    position: relative;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: grid;
+    font-family: 'Anton', sans-serif;
+    -webkit-text-stroke: 1px white;
+  }
+  p {
+    font-weight: bold;
+    color: rgba(18,28,58,1);
+    font-family: 'Lobster', cursive;
+  }
+  .coloumn {
+    width: 100%;
+    padding: 5px;
+    margin: 5px;
+    line-height: 30px;
+  }
+  .social {
+    text-align: center;
+  }
+  .social > a > i {
+    text-decoration: none;
+    color: black;
+    transition: 1s;
+  }
+  .social > a > i:hover {
+    transform: scale(1.8);
+  }
+  i {
+    padding: 5px;
+    transform: scale(1.2);
+    -webkit-text-stroke: .5px rgb(0,255,219);
+    text-stroke: .5px rgb(0,255,219);
+  }
+  .line {
+    width: 100%;
+    height: 4px;
+    background-color: rgb(175,175,175);
+    border-radius: 3px;
+    position: relative;
+    overflow: hidden;
+  }
+  span {
+    width: 10px;
+    height: 100%;
+    background-color: white;
+    position: absolute;
+    left: -15px;
+    animation: animatespan 2s linear infinite;
+  }
+  @keyframes animatespan {
+    100% {
+      left: 110%;
+      transform: scale(1.8);
+      filter: hue-rotate(360deg);
+    }
+  }
+  
+  .copyright {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  @media (max-width:500px) {
+    .bolx {
+      border-radius: none;
+    }
+    footer {
+      grid-template-columns: auto;
+    }
+  }
+</style>
+  </head>
+  <body>
+    <div class="bolx">
+      <footer>
+        <div class="coloumn">
+        <h1>
+          About
+          <div class="line">
+            <span></span>
+          </div>
+        </h1>
+        <ul>
+          <p><i class="fas fa-hand-holding-heart"></i>Introduce to our safe delevery</p>
+          <p><i class="fas fa-hand-holding-heart"></i>Trusted by over 40 million people </p>
+          <p><i class="fas fa-hand-holding-heart"></i>Connect with us more then 50 countries</p>
+        </ul>
+      </div>
+      
+      <div class="coloumn">
+        <h1>
+          Contact
+          <div class="line">
+            <span></span>
+          </div>
+        </h1>
+        <ul>
+          <p><i class="fas fa-hand-holding-heart"></i>We have so many branch in every country</p>
+          <p><i class="fas fa-hand-holding-heart"></i>Services is availablein every branch</p>
+          <p><i class="fas fa-hand-holding-heart"></i>free to call 24 * 7</p>
+          <p><i class="fas fa-hand-holding-heart"></i>No charge will apply</p>
+        </ul>
+      </div>
+      <div class="coloumn">
+        <h1>
+          Help center
+          <div class="line">
+            <span></span>
+          </div>
+        </h1>
+        <ul>
+          <p><i class="fas fa-mobile-alt"></i>Mobile: 01760-089847</p>
+          <p><i class="fas fa-envelope"></i>E-Mail: jaberhc2002@gmail.com</p>
+          <p><i class="fas fa-tty"></i>Telephone: 1234567890</p>
+          <p><i class="fas fa-sms"></i>SMS: 0858816789</p>
+        </ul>
+      </div>
+      <div class="coloumn">
+        <h1>
+          Social Link
+          <div class="line">
+            <span></span>
+          </div>
+        </h1>
+        <br />
+        <ul class="social">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <br />
+          <a href="#"><i class="fab fa-twitter-square"></i></a>
+          <a href="#"><i class="fab fa-facebook-messenger"></i></a>
+          <a href="#"><i class="fab fa-github"></i></a>
+        </ul>
+      </div>
+    </footer>
+    </div>
+  </body>
+</html>

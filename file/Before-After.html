@@ -1,0 +1,109 @@
+<html>
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sigmar+One&display=swap" rel="stylesheet">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>Before-After</title>
+<style type="text/css" media="all">
+  * {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+  body {
+    width: 100%;
+    height: 100%;
+    background-color: #193f48;
+  }
+  .container {
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+  }
+  a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 40px;
+    font-family: 'Sigmar One', cursive;
+  }
+  span {
+    display: block;
+    padding: 40px;
+    padding-left: 60px;
+    padding-right: 60px;
+    background: -webkit-linear-gradient(45deg, blue 50% , #ff009f 50%);
+    
+  }
+  a::before, a::after {
+    content: " ";
+    display: block;
+    background: -webkit-linear-gradient(red 50% , skyblue 50%);
+    position: absolute;
+    transition: .5s;
+  }
+  a::before {
+    top: 0px;
+    right: 0px;
+    width: 0%;
+    height: 10px;
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    background-color: linear-gradient(red 50% , #ff009f 50%);
+  }
+  a::after {
+    bottom: 0px;
+    left: 0px;
+    width: 0%;
+    height: 10px;
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    background-color: gold;
+  }
+  a:hover::before  {
+    width: 100%;
+  }
+   a:hover::after  {
+    width: 100%;
+  }
+  
+  span::before, span::after {
+    content: " ";
+    display: block;
+    background-color: gold;
+    position: absolute;
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  span::before {
+    top: 0px;
+    left: 0px;
+    width: 10px;
+    height: 0%;
+    background-color: gold;
+    
+  }
+  span::after {
+    bottom: 0px;
+    right: 0px;
+    width: 10px;
+    height: 0%;
+    background-color: gold;
+  }
+  span:hover::before  {
+    height: 100%;
+  }
+  span:hover::after  {
+    height: 100%;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <span>
+      <a href="#">Hover</a>
+    </span>
+  </div>
+</body>
+</html>

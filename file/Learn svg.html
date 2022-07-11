@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+ <head> 
+  <meta charset="UTF-8"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"> 
+  <link rel="stylesheet" href="style3.css"> 
+  <title>Document</title> 
+<style type="text/css" media="all">
+  *
+{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: black;
+    width: 100px;
+    height: 100vh;
+}
+.main{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon{
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin: 20px;
+    border-radius: 50px;
+    transition: all .8s;
+}
+
+.icon:hover:nth-child(1){
+  background: #e60073;
+  box-shadow: 0 0 20px #e60073;
+}
+
+.icon:hover:nth-child(2){
+    background: #1877f2;
+    box-shadow: 0 0 20px #1877f2;
+}
+
+.icon:hover:nth-child(3){
+    background: #25d366;
+    box-shadow: 0 0 20px #25d366;
+}
+
+.icon:hover:nth-child(4){
+    background: #1da1f2;
+    box-shadow: 0 0 20px #1da1f2;
+}
+
+.icon i{
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+svg circle{
+    stroke-dasharray: 62;
+    transition: all .8s;
+}
+
+.icon:hover svg circle{
+    stroke-dasharray: 220;
+}
+</style>
+ </head> 
+ <body> 
+  <div class="main"> 
+   <div class="icon"> 
+    <svg height="80" width="80"> <circle cx="40" cy="40" r="35" stroke="white" stroke-width="4" fill="none"></circle> 
+    </svg> <i class="fab fa-instagram fa-2x"></i> 
+   </div> 
+   <div class="icon"> 
+    <svg height="80" width="80"> <circle cx="40" cy="40" r="35" stroke="white" stroke-width="4" fill="none"></circle> 
+    </svg> <i class="fab fa-facebook fa-2x"></i> 
+   </div> 
+   <div class="icon"> 
+    <svg height="80" width="80"> <circle cx="40" cy="40" r="35" stroke="white" stroke-width="4" fill="none"></circle> 
+    </svg> <i class="fab fa-whatsapp fa-2x"></i> 
+   </div> 
+   <div class="icon"> 
+    <svg height="80" width="80"> <circle cx="40" cy="40" r="35" stroke="white" stroke-width="4" fill="none"></circle> 
+    </svg> <i class="fab fa-twitter fa-2x"></i> 
+   </div> 
+  </div> 
+ </body>
+</html>

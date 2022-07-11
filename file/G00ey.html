@@ -1,0 +1,54 @@
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+  <title></title>
+  
+</head>
+<style type="text/css" media="all">
+  .stage-wrapper{
+  width:400px;
+  height:600px;
+  top:50%;
+  left:50%;
+  position:absolute;
+  transform:translate(-50%,-50%);
+  background:#fff;
+  filter: blur(10px) contrast(20);
+}
+.obj-1,.obj-2{
+  width:200px;
+  height:200px;
+  top:50%;
+  left:50%;
+  position:absolute;
+  border-radius:50%;
+  background:#000;
+  transform:translate(-50%,-50%);
+}
+.obj-1{
+  left:30%;
+  animation:ani-1 3s ease infinite;
+}
+.obj-2{
+  left:70%;
+  animation:ani-2 3s ease infinite;
+}
+@keyframes ani-1{
+  0%{left:30%; }
+  50%{left:50%; }
+  100%{left:30%; }
+}
+@keyframes ani-2{
+  0%{left:70%;}
+  50%{left:50%;}
+  100%{left:70%;}
+}
+</style>
+<body>
+  <div class = "stage-wrapper">
+     <div class = "obj-1"></div>
+     <div class = "obj-2"></div>
+  </div>
+</body>
+</html>

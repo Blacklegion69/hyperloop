@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page Title</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+    margin:0;
+    padding:0;
+    background:#000;
+}
+.shadow{
+    position:relative;
+    margin:200px auto 0;
+    width:250px;
+    height:200px;
+    border-radius:10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:linear-gradient(0deg, #000 , #262626 );
+}
+.shadow:before,
+.shadow:after{
+    content:'';
+    position:absolute;
+    width:calc(100% + 4px);
+    height:calc(100% + 4px);
+    border-radius:10%;
+    background:linear-gradient(45deg, #fb0094, #0000ff , #ffff00 , #ff0000 , #fb0094, #0000ff , #ffff00 , #ff0000);
+    background-size:400%;
+    z-index:-1;
+    animation:animate 20s linear infinite ;
+}
+.shadow:after{
+    filter:blur(40px);
+}
+@keyframes animate{
+    0%{
+        background-position:0 0;
+    }
+    50%{
+        background-position-x:300% ;
+    }
+    100%{
+        background-position:0 0;
+    }
+}
+</style>
+    </head>
+    <body>
+        <div class="shadow"></div>
+    </body>
+</html>

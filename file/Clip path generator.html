@@ -1,0 +1,179 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Wave Generator</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+* {
+    color: #ED4545;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+}
+body {
+    background-color: #F7E1E0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#container {
+    border: 1px solid #ED4545;
+    border-radius: 8px;
+    margin: 15px;
+    background-color: #F7E1E0;
+    z-index: 100;
+}
+h1 {
+    text-align: center;
+    margin: 2rem 0;
+}
+.el-wrapper {
+    margin: 1rem;
+    display: flex;
+    flex-flow: row;
+}
+p {
+    font-size: 20px;
+    width: 115px;
+}
+input {
+    font-size: 20px;
+    border: none;
+    border-bottom: 1px solid #ED4545;
+    padding: 4px 31px;
+    width: 132px;
+    margin-left: 20px;
+}
+button {
+    background-color: #ED4545;
+    border: 1px solid #ED4545;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 25px;
+    margin: 24px auto;
+    cursor: pointer;
+}
+button:hover {
+    background-color: white;
+    color: #ED4545;
+    border: 1px solid #ED4545;
+}
+#result {
+    width: calc(100% - 100px);
+    display: none;
+    color: rgb(237, 69, 69);
+    border: 2px solid #ED4545;
+    padding: 2rem;
+    font-size: 15px;
+    border-radius: 8px;
+    margin: 1rem;
+}
+#message {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 15px 25px;
+    background-color: #ED4545;
+    color: white;
+    text-transform: uppercase;
+    display: none;
+}
+.box {
+  width: calc(100% - 100px);
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+#wave-container {
+  width: 400px;
+}
+</style>
+</head>
+<body>
+<h1>Wave Generator</h1>
+<div class="box"><div id="wave-container"></div></div>
+<div id="container">
+    <div class="el-wrapper">
+        <p>Width: </p>
+        <input type="number" id="width" value="700" oninput="generateWave()"/>
+    </div>
+    <div class="el-wrapper">
+        <p>Height: </p>
+        <input type="number" id="height" value="200" oninput="generateWave()"/>
+    </div>
+    <div class="el-wrapper">
+        <p>Offset: </p>
+        <input type="number" id="offset" value="100" oninput="generateWave()"/>
+    </div>
+    <div class="el-wrapper">
+        <p>Amplitude: </p>
+        <input type="number" id="amplitude" value="30" oninput="generateWave()"/>
+    </div>
+    <div class="el-wrapper">
+        <p>Frequency: </p>
+        <input type="number" id="frequency" value="3" oninput="generateWave()"/>
+    </div>
+    <div class="el-wrapper">
+        <button onclick="copyToClipBoard()" id="copyButton">Copy to clipboard</button>
+    </div>
+    <div id="message">Copied to clipboard!</div>
+</div>
+<div id="result"></div>
+
+
+<script>
+  let clipPath = '';
+function generateWave() {
+    const width_px = +document.getElementById('width').value;
+    const height_px = +document.getElementById('height').value;
+    const offset = +document.getElementById('offset').value;
+    const amplitude = +document.getElementById('amplitude').value;
+    const frequency = +document.getElementById('frequency').value;
+    const units = frequency * width_px / 100;
+
+    let clipPathString = 'clip-path: polygon(100% 0%, 0% 0% ';
+
+    for (let i = 0; i <= 100; i++) {
+        let val = offset + amplitude * Math.cos(i / units);
+        val = (val / height_px * 100).toFixed(2);
+        clipPathString += ', ' + i + '% ' + val + '%';
+    }
+    clipPathString += ');';
+
+    clipPath = clipPathString;
+    let divEl = document.getElementById('wave-container');
+    divEl.style = `width:${width_px}px;height:${height_px}px; ` + 'background-color:#ED4545; transform: rotate(180deg); ' + clipPathString;
+    getClipPath();
+}
+
+function getClipPath() {
+    let divEl = document.getElementById('result');
+    divEl.style = 'display: block';
+    divEl.textContent = clipPath;
+
+    const copyButton = document.getElementById('copyButton');
+    copyButton.style = 'display: block;';
+    let container = document.getElementById('container');
+}
+
+function copyToClipBoard() {
+    navigator.clipboard.writeText(clipPath);
+    let messageEl = document.getElementById('message');
+    messageEl.style = 'display: block;';
+
+    setTimeout(() => {
+        messageEl.style = 'display: none;';
+    }, 3000);
+}
+(() => {
+    generateWave();
+})();
+
+</script>
+</body>
+</html>

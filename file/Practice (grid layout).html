@@ -1,0 +1,91 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="" content="">
+    <title></title>
+<style type="text/css" media="all">
+  * {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+  body {
+   background-color: rgb(0,150,150);
+   align-items: center;
+   justify-content: center;
+  }
+  .container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 2px;
+    grid-row-gap: .5px;
+    justify-content: center;
+    align-items: center;
+  }
+  .box {
+    display: flex;
+    width: 100px;
+    height: 50px;
+    position: relative;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    
+  }
+  .box::before {
+    content: "  ";
+    width: 25px ;
+    height: 150px;
+    background: -webkit-linear-gradient(45deg ,rgb(234,0,255) , rgb(98,255,0));
+    position: absolute;
+    animation: animate 3s linear infinite;
+    overflow: hidden;
+  }
+  @keyframes animate {
+    100% {
+      transform: rotatez(360deg);
+      filter: hue-rotate(360deg);
+    }
+  }
+  .box::after {
+    content: "  ";
+    position: absolute;
+    inset: 2px;
+    background-color: rgb(0,150,150);
+    background-image: url("https://dl.dropbox.com/s/o5evd0whd3s14h8/IMG_20210216_190037_408.jpg?dl=0");
+    background-size: cover;
+  }
+  .box h2 {
+    color: white;
+    position: relative;
+    z-index: 10;
+  }
+</style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box"><h2>ONE</h2></div>
+      <div class="box"><h2>ONE</h2></div>
+      <div class="box"><h2>ONE</h2></div>
+      <div class="box"><h2>ONE</h2></div>
+      <div class="box"><h2>ONE</h2></div>
+      <div class="box"><h2>ONE</h2></div>
+      <div class="box"><h2>ONE</h2></div>
+      <div class="box"><h2>ONE</h2></div>
+      <div class="box"><h2>ONE</h2></div>
+      <div class="box"><h2>ONE</h2></div>
+      <div class="box"><h2>ONE</h2></div>
+      <div class="box"><h2>ONE</h2></div>
+      <div class="box"><h2>ONE</h2></div>
+      <div class="box"><h2>ONE</h2></div>
+      <div class="box"><h2>ONE</h2></div>
+      <div class="box"><h2>ONE</h2></div>
+      <div class="box"><h2>ONE</h2></div>
+      <div class="box"><h2>ONE</h2></div>
+      <div class="box"><h2>ONE</h2></div>
+      <div class="box"><h2>ONE</h2></div>
+      <div class="box"><h2>ONE</h2></div>
+    </div>
+  </body>
+</html>

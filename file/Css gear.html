@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page Title</title>
+    </head>
+    <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+    }
+        body {
+   background-color:#000; 
+}
+
+.gear{
+    position:relative;
+    height:100px;
+    width:100px;
+    left:50px;
+    top:80px;
+    border:60px solid gray;
+    border-radius:50%;
+    animation:rotation 20s linear infinite;
+}
+.gear:nth-child(2){
+    top:110px;
+    transform:rotateZ(345deg);
+    animation:rotation2 20s linear infinite;
+}
+.t{
+    position:absolute;
+    height:100px;
+    width:100px;
+    background-color:transparent;
+    border-radius:50%;
+}
+.tInner{
+    position:absolute;
+    top:-90px;
+    left:33px;
+    height:81px;
+    width:34px;
+    background-color:gray;
+    border-radius:30%;
+}
+@keyframes rotation{
+    from{
+      transform:rotateZ(0deg);  
+    }
+    to{
+      transform:rotateZ(360deg);   
+    }
+}
+@keyframes rotation2{
+    from{
+      transform:rotateZ(345deg);  
+    }
+    to{
+      transform:rotateZ(-15deg);   
+    }
+}
+
+.container {
+  width: 90%;
+  background-color: white;
+  margin: 10px auto;
+}
+
+
+
+    </style>
+    
+    
+    
+    
+    
+    
+<body>
+    <section class="container">
+      <div class = "gear"></div> 
+      <div class = "gear"></div>
+    </section>
+</body>
+    
+    
+    
+    
+    
+    
+<script>
+    var gear;
+var t,interval = 100;
+window.onload = () =>{
+ gear = document.getElementsByClassName('gear');
+ apply();
+ 
+// setRotation(gear[1],true);
+ 
+}
+function apply(){
+  let num = 0;
+  for(let e of gear){
+  for(let i = 0; i< 12; i++){
+ t = document.createElement('div');
+ t.className = "t";
+ t.style.transform = "rotate("+(i*30)+"deg)"; 
+ e.appendChild(t);
+ tInner = document.createElement('div');
+ tInner.className = 'tInner';
+ t.appendChild(tInner);
+ }
+}
+}
+function setRotation(e)
+{
+ for(let g of gear){
+  g.style.animationDuration =
+   e.value*100+"ms";
+ }
+}
+</script>
+</html>

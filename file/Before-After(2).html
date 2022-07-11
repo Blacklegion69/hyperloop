@@ -1,0 +1,129 @@
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>Before-after</title>
+<style type="text/css" media="all">
+  * {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+  body {
+    background-color: #e0e0e0;
+  }
+  .box1 {
+    width: 200px;
+    margin: 10px auto;
+    padding: 10px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: gold;
+    position: relative;
+    text-shadow: 1px 1px 1px black;
+    background: -webkit-linear-gradient(225deg, #f0f0f0 , #cacaca);
+    box-shadow:  -5px 5px 7px #b8b8b8,
+             5px -5px 7px #ffffff;
+    margin-top: 150px;
+    transition: 0.5s;
+  }
+  .box1:hover {
+    box-shadow: none;
+    
+    border-radius: 0px;
+background: #e0e0e0;
+box-shadow: inset 5px 5px 10px #b1b1b1,
+            inset -5px -5px 10px #ffffff;
+  }
+  span {
+    width: 200px;
+    margin: 10px auto;
+    padding: 10px;
+    color: gold;
+    text-shadow: 1px 1px 1px black;
+    transform: scale(2.2);
+  }
+  p {
+    color: red;
+    display: inline-block;
+  }
+  .box1::before {
+    content: " ";
+    height: 5px;
+    background: -webkit-linear-gradient(45deg , red , black);
+    position: absolute;
+    width: 0px;
+    right: 0px;
+    top: 0px;
+    transition: 0.2s;
+    transition-delay: 0.6s;
+  }
+  span::before {
+    content: " ";
+    height: 0px;
+    background: -webkit-linear-gradient(45deg , red , black);
+    position: absolute;
+    width: 5px;
+    left: 0px;
+    top: 0px;
+    transition: 0.2s;
+    transition-delay: 0.4s;
+  }
+  .box1::after {
+    content: " ";
+    height: 5px;
+    background: -webkit-linear-gradient(45deg , red , black);
+    position: absolute;
+    width: 0px;
+    left: 0px;
+    bottom: 0px;
+    transition: 0.2s;
+    transition-delay: 0.2s;
+  }
+  span::after {
+    content: " ";
+    height: 0px;
+    background: -webkit-linear-gradient(45deg , red , black);
+    position: absolute;
+    width: 5px;
+    right: 0px;
+    bottom: 0px;
+    transition: 0.2s;
+    transition-delay: 0s;
+  }
+  .box1:Hover::before {
+    width: 100%;
+    transition-delay: 0s;
+  }
+  span:Hover::before {
+    height: 100%;
+    transition-delay: 0.2s;
+  }
+  .box1:Hover::after {
+    width: 100%;
+    transition-delay: 0.4s;
+  }
+  span:Hover::after {
+    height: 100%;
+    transition-delay: 0.6s;
+  }
+</style>
+</head>
+<body>
+  <div class="box1">
+    <span>
+      H<p>o</p>v<p>e</p>r  <p>M</p>e
+    </span>
+  </div>
+  <div class="box1">
+    <span>
+      H<p>o</p>v<p>e</p>r  <p>M</p>e
+    </span>
+  </div>
+  <div class="box1">
+    <span>
+      H<p>o</p>v<p>e</p>r  <p>M</p>e
+    </span>
+  </div>
+</body>
+</html>

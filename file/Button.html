@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page Title</title>
+    </head>
+    <body>
+    <h1 id="heading">Buttons</h1>
+    
+    <div id="Buttons">
+        <button class="btn btn-tdScaleIn">Click Me</button>
+        <button class="btn btn-tdRotateP">Click Me</button>
+        <button class="btn btn-tdRotateN">Click Me</button>
+        <button class="btn btn-tdScaleOut">Click Me</button>
+        <button class="btn btn-tdCut1">Click Me</button>
+        <button class="btn btn-tdCut2">Click Me</button>        
+    </div>
+<style>
+  
+*{
+    outline:none;
+}
+body {
+    display:flex;
+    user-select:none;
+    justify-content:center;
+    background:rgb(10,10,50);
+}
+#heading{
+    color:#fff;
+    position:absolute;
+    margin-top:80px;
+    background:linear-gradient( 90deg,rgb(55,155,255),rgb(255,5,255));
+   -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    font-size:40px;padding:15px;
+    box-shadow:0 0 20px 2px grey;
+    border-radius:10px;    
+    transition:0.2s;
+}
+#heading:active{
+transform:scale(0.8);
+box-shadow:0 0 30px 2px rgb(255,25,255);
+}
+#Buttons{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, 160px);
+    gap:20px;grid-template-rows:repeat(50px,80px);
+    width:auto;height:auto;margin-top:200px;
+    padding:5px;
+}
+
+.btn{
+width:140px;height:60px;
+border:none;border-radius:10px;
+margin:5px;
+}
+
+.btn-tdScaleIn{
+font-size:18px;font-weight:bold ;
+color:#fff;transition:0.1s;
+background:rgb(55,155,255);
+grid-column:1;grid-row:1;
+}
+.btn-tdScaleIn:active{
+transform:scale(0.8);
+background:rgb(200,200,200);
+}
+
+
+.btn-tdRotateP{
+font-size:18px;font-weight:bold;
+color:#fff;transition:0.1s;
+background:rgb(255,50,55);
+grid-column:1;grid-row:2;
+}
+.btn-tdRotateP:active{
+transform:rotateZ(-30deg);
+}
+
+
+.btn-tdRotateN{
+font-size:18px;font-weight:bold;
+color:#fff;transition:0.1s;
+background:rgb(255,100,0);
+grid-column:2;grid-row:2;
+}
+.btn-tdRotateN:active{
+transform:rotateZ(30deg);
+}
+
+
+.btn-tdScaleOut{
+font-size:18px;
+font-weight:bold;
+color:#fff;
+transition:0.1s;
+background:rgb(155,55,155);
+grid-row:1;grid-column:2;
+}
+.btn-tdScaleOut:active{
+background:rgb(200,200,200);
+transform:scale(1.2);
+}
+
+
+.btn-tdCut1{
+font-size:18px;
+font-weight:bold;
+color:#fff;
+background:rgb(10,255,5);
+grid-row:3;grid-column:2;
+
+}
+.btn-tdCut1:active{
+clip-path:polygon(0 0 , 8% 50% , 0 100% , 100% 100% , 92% 50% ,100% 0);
+}
+
+
+.btn-tdCut2{
+font-size:18px;font-weight:bold;
+color:#fff;background:rgb(255,205,0);
+grid-row:3;grid-column:1;
+}
+.btn-tdCut2:active{
+clip-path:polygon(0 0 , 8% 50% , 0 100% , 50% 92% , 100% 100% , 92% 50% , 100% 0 , 50% 8% );
+}
+</style>
+    </body>
+</html>

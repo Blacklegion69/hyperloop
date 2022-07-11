@@ -1,0 +1,251 @@
+<html>
+ <head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"> 
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+  <title>Wave Generator</title> 
+  <link rel="preconnect" href="https://fonts.googleapis.com"> 
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+  <link href="https://fonts.googleapis.com/css2?family=Hanalei+Fill&amp;display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous"> 
+  <link rel="stylesheet" href="./style.css" type="text/css"> 
+  <link rel="icon" type="image/png" href="./favicon.jpg"> 
+ </head>
+ <style>
+  body {
+    background-color: white;
+}
+
+* {
+    color: #e0e0e0;
+    font-family: 'Hanalei Fill', cursive;
+    margin: 0;
+    text-shadow:  5px 5px 10px #afafaf,
+             -5px -5px 10px #ffffff;
+}
+
+#container {
+    border: 1px solid white;
+    border-radius: 8px;
+    position: relative;
+    width: 90%;
+    height: 400px;    
+    display: block;
+    margin: 20px auto;
+    border-radius: 25px;
+    background: #e0e0e0;
+    box-shadow:  5px 5px 10px #afafaf,
+             -5px -5px 10px #ffffff;
+    text-shadow:  5px 5px 10px #afafaf,
+             -5px -5px 10px #ffffff;
+    font-family: 'Hanalei Fill', cursive;
+}
+
+h1 {
+    color: rgba(18, 28, 58, 1.6);
+    text-align: center;
+    margin: 2rem 0;
+    text-shadow:  5px 5px 10px #afafaf,
+             -5px -5px 10px #ffffff;
+    font-family: 'Hanalei Fill', cursive;
+}
+
+.el-wrapper {
+    margin: 10px;
+    display: flex;
+}
+
+p {
+    font-size: 20px;
+    display: block;
+    margin: auto;
+    position: relative;
+    text-shadow:  5px 5px 10px #afafaf,
+             -5px -5px 10px #ffffff;
+    color: black;
+    
+}
+
+input {
+    font-size: 20px;
+    color: black;
+    border: none;
+    outline: none;
+    padding: 4px 31px;
+    width: 132px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 25px;
+    background: #e0e0e0;
+    border: 2px solid red;
+    
+    box-shadow:  5px 5px 10px #afafaf,
+             -5px -5px 10px #ffffff;
+    text-shadow:  5px 5px 10px #afafaf,
+             -5px -5px 10px #ffffff;
+}
+
+button {
+    border: 1px solid #ED4545;
+    color: black;
+    padding: 12px 25px;
+    border-radius: 25px;
+    margin: 24px auto;
+    cursor: pointer;
+    border-radius: 25px;
+    background: #e0e0e0;
+    transition: .2s;
+    box-shadow:  5px 5px 10px #afafaf,
+             -5px -5px 10px #ffffff;
+    text-shadow:  5px 5px 10px #afafaf,
+             -5px -5px 10px #ffffff;
+}
+
+button:active {
+    background-color: red;
+    color: white;
+    padding: 12px 25px;
+    border: 1px solid black;
+    transform: scale(0.90);
+    text-shadow:  5px 5px 10px #afafaf,
+             -5px -5px 10px #ffffff;
+}
+
+#result {
+    display: block;
+    margin: 10px auto;
+    color: black;
+    padding: 2rem;
+    font-size: 15px;
+    width: 80%;    
+    border-radius: 25px;
+    background: #e0e0e0;
+    border: 5px solid black;
+    box-shadow: 2px 5px 10px #afafaf,
+               -5px -5px 10px #ffffff;
+    text-shadow:  5px 5px 10px #afafaf,
+             -5px -5px 10px #ffffff;
+}
+
+#message {
+    display: none;
+    position: relative;
+    padding: 15px 25px;
+    color: black;
+    text-align: center;
+    text-transform: uppercase;
+    border-radius: 25px;
+    background: #e0e0e0;
+    transition: 1s;
+    border: 2px solid black;
+    box-shadow:  5px 5px 10px #afafaf,
+             -5px -5px 10px #ffffff;
+    text-shadow:  5px 5px 10px #afafaf,
+             -5px -5px 10px #ffffff;
+}
+
+#wave-container {
+    width: 300px;
+    display: block;
+    margin: auto;
+    background: black;
+    background-color: black;
+    border: 2px solid rgb(0,204,255, 1.2);
+}
+</style>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <body> 
+  <h1>Wave Generator</h1> 
+  <div id="container"> 
+   <div class="el-wrapper"> 
+    <p>Width</p> 
+    <input type="number" id="width" value="400" oninput="generateWave()"> 
+   </div> 
+   <div class="el-wrapper"> 
+    <p>Height</p> 
+    <input type="number" id="height" value="200" oninput="generateWave()"> 
+   </div> 
+   <div class="el-wrapper"> 
+    <p>Offset</p> 
+    <input type="number" id="offset" value="100" oninput="generateWave()"> 
+   </div> 
+   <div class="el-wrapper"> 
+    <p>Amplitude</p> 
+    <input type="number" id="amplitude" value="30" oninput="generateWave()"> 
+   </div> 
+   <div class="el-wrapper"> 
+    <p>Frequency</p> 
+    <input type="number" id="frequency" value="3" oninput="generateWave()"> 
+   </div> 
+   <div class="el-wrapper"> 
+    <button onclick="copyToClipBoard()" id="copyButton">Copy to clipboard</button> 
+   </div> 
+   <div id="message">
+     ♡Copied♡ 
+   </div> 
+  </div> 
+  <div id="wave-container"></div> 
+  <div id="result"></div>
+ </body>
+ 
+ 
+ 
+ 
+ 
+<script>
+  let clipPath = '';
+function generateWave() {
+    const width_px = +document.getElementById('width').value;
+    const height_px = +document.getElementById('height').value;
+    const offset = +document.getElementById('offset').value;
+    const amplitude = +document.getElementById('amplitude').value;
+    const frequency = +document.getElementById('frequency').value;
+    const units = frequency * width_px / 100;
+
+    let clipPathString = 'clip-path: polygon(100% 0%, 0% 0% ';
+
+    for (let i = 0; i <= 100; i++) {
+        let val = offset + amplitude * Math.cos(i / units);
+        val = (val / height_px * 100).toFixed(2);
+        clipPathString += ', ' + i + '% ' + val + '%';
+    }
+    clipPathString += ');';
+
+    clipPath = clipPathString;
+    let divEl = document.getElementById('wave-container');
+    divEl.style = `width:${width_px}px;height:${height_px}px; ` + 'background-color:rgba(18, 28, 53, 1.4); transform: rotate(180deg); ' + clipPathString;
+    getClipPath();
+}
+
+function getClipPath() {
+    let divEl = document.getElementById('result');
+    divEl.style = 'display: block';
+    divEl.textContent = clipPath;
+
+    const copyButton = document.getElementById('copyButton');
+    copyButton.style = 'display: block;';
+    let container = document.getElementById('container');
+}
+
+
+
+function copyToClipBoard() {
+    navigator.clipboard.writeText(clipPath);
+    let messageEl = document.getElementById('message');
+    messageEl.style = 'display: block;';
+
+    setTimeout(() => {
+        messageEl.style = 'display: none;';
+    }, 3000);
+}
+(() => {
+    generateWave();
+})();
+</script>
+</html>

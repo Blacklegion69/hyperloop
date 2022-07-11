@@ -1,0 +1,215 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="" content="">
+    <title></title>
+
+
+<style type="text/css" media="all">
+  * {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: -webkit-linear-gradient(90deg, rgba(255,255,255,0.5), rgba(255,255,255,1));
+  }
+  header {
+    width: 95%;
+    height: 50px;
+    border-radius: 5px;
+    border-top: 3px solid gold;
+    border-right: 5px solid rgba(18,28,58,1);
+    border-bottom: 3px solid gold;
+    border-left: 5px solid rgba(18,28,58,1);
+    /*background: linear-gradient(145deg, #f0f0f0, #cacaca);*/
+    background: rgba(255,255,255,0.5);
+    -webkit-backdrop-filter: blur(1.2px);
+    backdrop-filter: blur(1.2px);
+    box-shadow:  1px 1px 10px #5a5a5a;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 10px;
+  }
+  .logo {
+    width: 100px;
+    height: 55px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(145deg, #f0f0f0, #cacaca);
+    border-radius: 5px;
+    box-shadow:  1px 1px 10px #5a5a5a;
+    border-left: 3px solid gold;
+    border-right: 3px solid gold;
+    position: absolute;
+    left: 10px;
+  }
+  .animationcombo {
+    width: 200px;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 10px;
+  }
+  .animation {
+    height: 50px;
+    right: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  .animation-1 {
+    height: 50px;
+    right: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotatez(180deg);
+  }
+  .animation > div {
+    width: 8px;
+    height: 34px;
+    background: black;
+  }
+  .animation-1 > div {
+    width: 8px;
+    height: 34px;
+    background: black;
+  }
+  .dot1 {
+    animation: animate 0.5s linear infinite 0s;
+  }
+  .dot2 {
+    animation: animate 0.5s linear infinite 0.2s;
+  }
+  .dot3 {
+    animation: animate 0.5s linear infinite 0.3s;
+  }
+  .dot4 {
+    animation: animate 0.5s linear infinite 0.4s;
+  }
+  .dot5 {
+    animation: animate 0.5s linear infinite 0.5s;
+  }
+  .dot6 {
+    animation: animate 0.5s linear infinite 0.6s;
+  }
+  .dot7 {
+    animation: animate 0.5s linear infinite 0.7s;
+  }
+  .dot8 {
+    animation: animate 0.5s linear infinite 0.8s;
+  }
+  .dot9 {
+    animation: animate 0.5s linear infinite 0.9s;
+  }
+  .dot10 {
+    animation: animate 0.5s linear infinite 1s;
+  }
+  @keyframes animate {
+    100% {
+      transform: rotatex(90deg);
+    }
+  }
+  .header {
+    width: 100%;
+    height: 100vh;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(18,28,58,1);
+    
+  }
+  .explore {
+    width: 150px;
+    height: 40px;
+    font-weight: bold;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    letter-spacing: 1.5px;
+    z-index: 100;
+  }
+  .explore::before {
+    content: " ";
+    width: 0px;
+    height: 100%;
+    position: absolute;
+    background: -webkit-linear-gradient(70deg, #a939c4, #37d889);
+    z-index: -100;
+    left: 0px;
+    transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  .explore:hover::before {
+    width: 100%;
+  }
+  .hoversection {
+    width: 100%;
+    height: 100vh;
+    background-image: url('leap.jpg');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+</style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">Agent 71</div>
+      <div class="animationcombo">
+        <div class="animation">
+        <div class="dot1"></div>
+        <div class="dot2"></div>
+        <div class="dot3"></div>
+        <div class="dot4"></div>
+        <div class="dot5"></div>
+        <div class="dot6"></div>
+        <div class="dot7"></div>
+        <div class="dot8"></div>
+        <div class="dot9"></div>
+        <div class="dot10"></div>
+      </div>
+        <div class="animation-1">
+        <div class="dot1"></div>
+        <div class="dot2"></div>
+        <div class="dot3"></div>
+        <div class="dot4"></div>
+        <div class="dot5"></div>
+        <div class="dot6"></div>
+        <div class="dot7"></div>
+        <div class="dot8"></div>
+        <div class="dot9"></div>
+        <div class="dot10"></div>
+      </div>
+      </div>
+    </header>
+    <section class="header">
+      <a href="#" class="explore">Explore More</a>
+    </section>
+    <section class="hoversection">
+      <div class="container">
+        <div class="box">
+          
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

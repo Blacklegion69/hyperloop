@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge"/>
+	<meta http-equiv="Content-Type" content="text/html; charSet=utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="Free Glassmorphism CSS Generator">
+	<meta name="keywords" content="Glassmorphism, design, design trends, CSS generator, glasmorphism generator"/>
+	<meta name="author" content="blacklight">
+	<title>Glass CSS | Free Glassmorphism CSS Generator</title>
+	<meta name="twitter:title" content="Glassmorphism - simple CSS generator"/>
+	<meta property="og:type" content="website"/>
+	<meta property="og:site_name" content="Glass CSS"/>
+	<meta property="og:url" content="https://hind-sagar-biswas.github.io/glassCSS"/>
+	<meta property="og:title" content="Glass CSS | Free Glassmorphism CSS Generator"/>
+	<meta property="og:description" content="Glassmorphism is a unified name for the popular Frosted Glass aesthetic."/>
+  <meta property="og:image" content="glassmorphism.jpeg">
+	<meta name="msapplication-TileColor" content="#3fb6ff"/>
+	<meta name="theme-color" content="#3fb6ff"/>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/monolith.min.css"/> <!-- 'monolith' theme -->
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="style.css">
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
+
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js" defer></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" defer></script>
+	<!-- Modern or es5 bundle -->
+<script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js" defer></script>
+
+	<script src="script.js" defer></script>
+</head>
+<body>
+	<img src="oval2.svg" alt="oval" id="oval2">
+	<header class="mb-3">
+		<center class="mt-3 mb-3" style="position: relative;">
+			<img src="oval1.svg" alt="oval" id="oval1">
+			<h1 class="glassHead"><span class="glass pad">Glass</span> CSS</h1>
+			<h4>A tool to generate CSS codes for Glassmorphism</h4>
+		</center>
+	</header>
+	<section id="container">
+		<div class="pad demoGroup">
+			<div class="col-md-4 demoGroup">
+				<div id="up"></div>
+				<div id="showDemo">
+					<center>
+						<img class="mt-2" src="https://i.pinimg.com/originals/a5/5c/07/a55c077d992aeab224bb9bfd9d0b44bf.png" width="150px" alt="">
+						<h1>Demo</h1>
+					</center>
+				</div>
+				<div id="down"></div>
+			</div>
+		</div>
+		<br>
+	</section>
+	<section id="container">
+		<div class="flex pad">
+			<div id="generator" class="col-md-5 pad">
+			<div class="pad">
+				<label for="blur" id="blurLabel">Blur</label>
+			<input type="range" class="custom-range" id="blur" name="blur" min="0" max="200" step="5" value="40">
+				<br>
+				<label for="opacity" id="opacityLabel">Opacity</label>
+				<input type="range" class="custom-range" id="opacity" name="opacity" min="0" max="100" value="30" step="5">
+				
+				<div class="custom-control custom-switch mb-1">
+    <input type="checkbox" class="custom-control-input" id="haveBorder" onclick="toggleBorder()" checked>
+    <label class="custom-control-label" for="haveBorder">Border</label>
+  </div>
+  <h4>Color</h4>
+  <div class="flex">
+  	<div class="one-third">
+  		<label for="red" id="redLabel">red</label>
+				<input type="range" class="custom-range" id="red" name="red" min="0" max="225" value="225">
+  	</div>
+  	<div class="one-third">
+  		<label for="green" id="greenLabel">green</label>
+				<input type="range" class="custom-range" id="green" name="green" min="0" max="225" value="225">
+  	</div>
+  	<div class="one-third">
+  		<label for="blue" id="blueLabel">blue</label>
+				<input type="range" class="custom-range" id="blue" name="blue" min="0" max="225" value="225">
+  	</div>
+  </div>
+  </div>
+			</div>
+			<div id="generatorOutput" class="col-md-7 pad">
+			<div class="dark-glass pad">
+				<label for="result" class="">CSS
+code</label>
+				<textarea class="dark-glass" id="result" rows="6" readonly>
+					
+				</textarea>
+				<button id="clickToCopy" onclick="copyText('result')">Copy to Clipboard</button>
+				</div>
+			</div>
+		</div>
+	</section>
+
+<style>
+  *{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+	width: 100vw;
+	min-height: 100vh;
+  background-image:url('leap.jpg');
+	font-family: sans-serif;
+	font-size: 12px;
+	background: #7f98ff;
+	background: url(background.jpeg);
+	background-image: url('Image.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+
+}
+.pad{
+	padding: 10px;
+}
+#generator div.pad, .cont{
+	background: #3fb6ff; 
+	color: white;
+	border-radius: 10px;
+	box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.40 );
+}
+.cont{
+	padding: 20px;
+}
+.dark-glass{
+	color: white;
+	background: rgba( 0, 0, 0, 0.40 );
+	box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.40 );
+	backdrop-filter: blur( 5px );
+-webkit-backdrop-filter: blur( 4px );
+	border-radius: 10px;
+	border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+#result{
+	width: 100%;
+	outline: none !important;
+	padding: 10px;
+}
+.demoGroup{
+	position: relative;
+	height: 240px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#showDemo{
+	color: grey;
+	height: 240px;
+	width: 270px;
+	left: 30px;
+}
+#up{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	top: -5px;
+	left: 5px;
+	z-index: 1;
+}
+#down{
+	width: 80px;
+	height: 80px;
+	bottom: -25px;
+	right: 0px;
+	position: absolute;
+}
+#clickToCopy, .color-picker{
+	background: #3fb6ff;
+	box-shadow: 0 4px 7px 0 rgba( 31, 38, 135, 0.80 );
+	border-radius: 10px;
+	width: 200px;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
+	color: white;
+	border: 1px solid rgba( 255, 255, 255, 0.18 );
+	outline: none !important;
+	transition: all 0.3s;
+}
+#color-display{
+	width: 50px;
+}
+#clickToCopy:hover{
+	background: #3fb6ffee;
+}
+#clickToCopy:click{
+	box-shadow: 0 2px 4px 0 rgba( 31, 38, 135, 0.80 );
+}
+header{
+	background: rgba( 225, 225, 225, 0.3 );
+	box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.30 );
+	backdrop-filter: blur( 12.5px );
+	-webkit-backdrop-filter: blur( 12.5px );
+	width: 100vw;
+	border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+#oval1{
+	position: absolute;
+	top: -20px;
+	left: -40px;
+	z-index: -100;
+}
+#oval2{
+	position: absolute;
+	top: 130px;
+	right: 0px;
+	z-index: -200;
+}
+.glass{
+	background: rgba( 225, 225, 225, 0.3 );
+	box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.30 );
+	backdrop-filter: blur( 12.5px );
+	-webkit-backdrop-filter: blur( 12.5px );
+	border-radius: 10px;
+	border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+@media(min-width: 768px){
+	.flex{
+		display: flex;
+		justify-content: space-around;
+	}
+	.one-third{
+	width: calc(100% / 3.1);
+	}
+	#oval1{
+		top: -20px;
+		left: 30vw;
+	}
+	#oval2{
+		top: 130px;
+		right: 30vw;
+	}
+}
+@media(max-width: 768px){
+	
+}
+</style>
+<script>
+  //VARIABLES
+
+
+//SELECTORS
+const blurInput = document.getElementById("blur");
+const opacityInput = document.getElementById("opacity");
+const outputDisplay = document.getElementById("result");
+const demoDisplay = [
+document.getElementById("showDemo"),
+document.getElementById("up"),
+document.getElementById("down")
+];
+const rgbInput = [
+document.getElementById("red"),
+document.getElementById("green"),
+document.getElementById("blue")
+];
+const rgbLabel = [
+document.getElementById("redLabel"),
+document.getElementById("greenLabel"),
+document.getElementById("blueLabel")
+];
+const blurLabel = document.getElementById("blurLabel");
+const opacityLabel = document.getElementById("opacityLabel");
+
+
+
+//EVENTLISTENER
+blurInput.addEventListener("input", function () {
+	updateCode()});
+
+opacityInput.addEventListener("input", function () {
+	updateCode()});
+for(i of rgbInput){
+	i.addEventListener("input", function () {
+	updateCode()});
+}
+
+
+//OBJECTS
+var glassProperty = {
+	red : 225,
+	blue : 225,
+	green : 225,
+	alpha : 3.5,
+	blur : 4,
+	haveBorder : true,
+	getCssCode : function() {
+		var code = `background: rgba( ${this.red}, ${this.green}, ${this.blue}, ${this.alpha} );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.30 );
+backdrop-filter: blur( ${this.blur}px );
+-webkit-backdrop-filter: blur( ${this.blur}px );
+border-radius: 10px;
+`;
+	if(this.haveBorder) {
+		code += `border: 1px solid rgba( 255, 255, 255, 0.18 );`;}
+		return code;
+	},
+}
+
+//FUNCTIONS
+function updateCode() {
+	glassProperty.blur = blurInput.value / 10;
+	glassProperty.alpha = opacityInput.value / 100;
+	
+	glassProperty.red = rgbInput[0].value;
+	glassProperty.green = rgbInput[1].value;
+glassProperty.blue = rgbInput[2].value;
+	
+	outputDisplay.value = glassProperty.getCssCode();
+	for(var i of demoDisplay) {
+		i.style = glassProperty.getCssCode();
+		}
+	
+	blurLabel.innerHTML = `Blur: ${glassProperty.blur}`;
+	opacityLabel.innerHTML = `Opacity: ${glassProperty.alpha}`;
+	
+	rgbLabel[0].innerHTML = `red: ${glassProperty.red}`;
+	rgbLabel[1].innerHTML = `green: ${glassProperty.green}`;
+	rgbLabel[2].innerHTML = `blue: ${glassProperty.blue}`;
+}
+	
+function toggleBorder() {
+	if(glassProperty.haveBorder) {
+		glassProperty.haveBorder = false;
+	}else {
+		glassProperty.haveBorder = true;
+	}
+	updateCode();
+}
+
+/* Function to copy the CSS code which has been generated */
+function copyText(textId) {
+  var copyText = document.getElementById(textId);
+
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+  document.execCommand("copy");
+  
+}
+
+
+//MAIN FLOW
+updateCode();
+</script>
+</body>
+</html>

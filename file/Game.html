@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page Title</title>
+<style>
+    
+</style>
+    </head>
+    <body>
+        <script>
+window.onload = function (){
+
+//this is a costum game libray I'm workking on rught now!
+   document.body.innerHTML = null
+var can = document.createElement('canvas')
+can.id = 'gc';
+can.style.position = 'fixed'
+document.body.appendChild(can);
+document.body.style.margin=0;
+
+var c = get('gc');
+var cc = c.getContext('2d');
+var frame = 0;
+var w;
+var h;
+
+
+adjustCanvas();
+
+
+
+
+
+//-------------------------------------
+//Makes sure the canvas is full screen
+function adjustCanvas() {
+  c.width = w = window.innerWidth
+  c.height = h = window.innerHeight
+  c.min = w < h ? w : h;
+  c.max = w > h ? w : h;
+  c.w = c.width;
+  c.h = c.height;
+  c.hw = c.w/2;
+  c.hh = c.h/2;
+  c.vw = w / 100;
+  c.vh = h / 100;
+  c.xc=c.width/2;
+  c.yc=c.height/2;
+  c.font = '10px Arial';
+  rect(0, 0, w, h)
+  txt('Using the [Caldro] Game Engine', c.xc, c.yc, font(6 * c.vw), 'skyblue')
+}
+
+function cameraUnfo(){
+  this.saved=false;
+  this.frameStart=0
+}
+
+function camera(x,y,va){
+  this.x=x;
+  this.y=y;
+  this.zoom=0;
+  this.viewableArea=va;
+  this.shake = function(axis,magnitude,duration,oscilation){
+    if(axis='x') {
+    this.x+=Math.sin(magnutude);
+    }
+  };
+}
+
+//checks collision between two entities
+function collided(a, b, type='ab') {
+    if(type == 'ab'){
+        let ax = a.x - a.width/2;
+        let ay = a.y - a.height/2;
+        let bx = b.x - b.width / 2;
+        let by = b.y - b.height / 2;
+  return ax <= bx + b.width &&
+    ax + a.width >= bx &&
+    ay <= by + b.height &&
+    ay + a.height >= by;
+    } else{
+        let value = (dist(this, a))<2000
+        return value;
+    }
+}
+
+//Gets an Element by its Id
+function get(id) {
+  return document.getElementById(id);
+}
+
+function gen(a, b,z='!') {
+  if (z == '') {
+    return Math.random() * (b - a + 1);
+  } else {
+    return a + Math.floor(Math.random() * (b - a + 1));
+  }
+}
+
+function pickColor() {
+  let color = 'rgba(' + gen(0, 255) + ',' + gen(0, 255) + ',' + gen(0, 255) + ',' + gen(0.1, 1,'') + ')';
+  return color;
+}
+
+//Clears the canvas (will clear the whole canvas if no argument is passed)
+function clear(x = 0, y = 0, w = c.width, h = c.height) {
+  cc.clearRect(x, y, w, h)
+}
+
+//Simplification of the fillRect method (function)
+function rect(x, y, w, h, color = 'black') {
+  cc.fillStyle = color;
+  cc.fillRect(x, y, w, h);
+}
+
+//sets the font style
+function font(size,font='Arial'){
+  let fnt = size+'px '+font;
+  cc.font = fnt;
+  c.font = fnt;
+  return font;
+}
+
+//Simplification of the text method (function)
+function txt(text, x, y, font = '10px Arial', fill = 'skyblue') {
+  cc.fillStyle = fill;
+  cc.font = font
+  cc.textAlign = 'center'
+  cc.textBaseline = "middle"
+  cc.fillText(text, x, y)
+}
+
+function edge(x, y, col, blur, w, h){
+cc.shadowColor = col
+cc.shadowBlur = blur
+rect(x, y, w, h, col)
+}
+
+function edges(w, h, blur, color){
+    edge(c.w,0,color, blur, w,h)
+ edge(-w,0,color, blur,w,h)
+ edge(c.w,c.h-h,color, blur, w,h)
+ edge(-w,c.h-h,color, blur, w,h)
+ edge(0,-h,color, blur, w,h)
+ edge(c.w-w,-h,color, blur, w,h)
+ edge(0,c.h,color, blur, w,h)
+ edge(c.w-w,c.h,color, blur, w,h)
+
+}
+
+function Rect(x, y, w, h, fill) {
+  //adjustCanvas();  
+  this.x = x - w / 2;
+  this.y = y - h / 2;
+  rect(this.x, this.y, w, h, fill)
+ /* this.clear = function() {
+   // adjustCanvas();  
+    clear(this.x, this.y, w, h)
+  }*/
+  this.info = function() {
+    //adjustCanvas();  
+    rect(x - w * 1.5, y - 1, w * 3, 2, 'black', )
+    rect(x - 1, y - h * 1.5, 2, h * 3, 'black')
+    txt('x : ' + this.x, this.x + w, this.y - h / 4.5, '10px Arial', 'skyblue')
+    txt('Y : ' + this.y, this.x + w, this.y - h / 10, '10px Arial', 'skyblue')
+  }
+}
+
+function pull(a, b, gravity){
+    if (a.x > b.x){
+        a.xv-=gravity
+    } else{
+        a.xv+=gravity
+    }
+    if (a.y > b.y) {
+     a.yv -= gravity
+    } else {
+     a.yv += gravity
+    }
+}
+
+//Draws a circle
+function circle(x,y,r,fill) {
+     cc.fillStyle = fill
+     cc.beginPath();
+     cc.arc(x,y,r, 0, 2 * Math.PI);
+     cc.closePath();
+     cc.fill();
+}
+
+//draw a line
+function line(a, b, c, d, col = 'green') {
+ cc.beginPath();
+ cc.strokeStyle = col;
+ cc.moveTo(a, b);
+ cc.lineTo(c, d);
+ cc.closePath();
+ cc.stroke();
+}
+
+//Creates an area on the screen that will be checked for collision with an entity
+function trigger(x=0,y=0,w=0,h=0){
+  this.x=x;
+  this.y=y;
+  this.width=w;
+  this.height=h;
+  this.activated=false;
+  this.times=0;
+  this.timer=0
+  this.attachment = null
+  this.active = true;
+  this.sizing = function(a){
+      if(a.width==undefined){
+          this.width = a.radius;
+          this.height = a.radius;
+      } else {
+      this.width=a.width;
+      this.height=a.height
+      }
+  }
+  this.check = function(a){
+  let value = collided(this, a, 'ab')
+  if (value == true){
+      this.active=true
+  } else{
+      this.active=false
+  }
+  txt('Colliding = '+value, c.width-200,50, '20px sans-serif')
+  return value
+  };
+  
+  this.update = function(offsetX=0,offsetY=0){
+     if(this.attached==true){
+        this.x=this.attachment.x+offsetX
+        this.y=this.attachment.y+offsetY
+     }
+  }
+  
+   this.show = function(fill='gba(255,100,255,0.7)'){
+    this.color;
+    cc.shadowColor = null
+    cc.shadowBlur=0
+   if (this.active==true){
+      this.color='rgba(255,10,10,0.5)'
+     }else{ 
+       //this.color=fill
+    };
+  this.view = Rect(this.x,this.y,this.width,this.height,this.color);
+  };
+  this.attach = function(a){
+    this.attachment=a;
+    this.attached = true; 
+    this.x=a.x;
+    this.y=a.y
+  }
+  this.unattach = function(){
+    this.attachment=null;
+    this.attached = false;
+  }
+  this.idle = function(a) {
+    if(a==true){
+      this.active=false;
+    } else if(a==false){
+      this.active=true;
+    }
+  }
+}
+
+function cordShow(x, y, fill = 'green',w=300, h=2){
+    Rect(x, y, w, h, fill)
+    Rect(x, y, h, w, fill)
+    txt('x : '+x+', y : '+y, x+50, y-50)
+}
+
+const Point2D = function(x, y) { this.x = x; this.y = y; };
+
+      const Point3D = function(x, y, z) { this.x = x; this.y = y; this.z = z; };
+
+var pointer = new Point2D(0, 0)
+
+const eventBasedOnDevice = navigator.userAgent.match(/ipod|ipad|iphone/i) ? 'touchstart' : 'click';
+
+get('gc').addEventListener(eventBasedOnDevice, function event(event) {
+ pointer.x = event.pageX
+ pointer.y = event.pageY
+ //alert(pointer.x)
+ touchHandler()
+})
+
+
+function demoball(x, y, r, fill, xv=gen(-10, 10), yv=gen(-10, 10)){
+    this.x = x;
+    this.y = y;
+    this.xv = xv;
+    this.yv = yv;
+    this.radius = r;
+    this.fill = fill
+    this.play = function(){
+        this.x += this.xv;
+        this.y += this.yv;
+        if (this.x <= 0) {
+         this.x = 0 + this.radius
+         this.xv = -this.xv
+        }
+        if (this.x >= c.w) {
+         this.x = w - this.radius
+     this.xv = -this.xv
+        }
+        if (this.y <= 0) {
+         this.y = 0 + this.radius
+         this.yv = -this.yv
+        }
+        if (this.y >= c.h) {
+         this.y = h - this.radius
+         this.yv = -this.yv
+        }
+    
+            cc.shadowColor = fill;
+            this.edge_color=this.inner_color = fill;
+         circle(this.x, this.y, this.radius, this.edge_color)
+         circle(this.x, this.y, this.radius / 3, this.inner_color)
+         //  rect(this.x - 100, this.y, 200, 1, 'black', )
+         //   rect(this.x,this.y-200,1,400,'black')
+    }
+    
+}
+//END OF THE LIBRARY
+
+
+
+
+
+
+
+
+
+
+
+
+
+//START OF ACTUAL GAME CODE
+var frame = 0;
+var blocks = [];
+var players = [];
+var triggers = [];
+var start, dif;
+var screen = 1
+var difficulty = 'easy'
+
+
+//Audio stuff
+/*
+var aud = new(window.AudioContext || window.webkitAudioContext)()
+var exp = document.querySelector('audio')//get('dc');
+var med = aud.createMediaElementSource(exp)
+med.connect(aud.destination)
+*/
+
+get('gc').addEventListener('touchmove', function(){
+    //you.auto = !you.auto;
+})
+
+function dist(a, b){
+    let dist =  Math.sqrt((a.x-b.x)**2+(a.y-b.y)**2);
+    return dist;
+}
+
+
+function player(x, y, size, color='black'){
+    //The cube's position
+    this.x = x;
+    this.y = y;
+    this.xv = 0;
+    this.yv = 0;
+    this.speed = 50;
+    this.friction = 0.2
+
+    //since you are a spuare, your height and width will be the same
+    this.width = size;
+    this.height = size;
+    this.size = size;
+    this.color = color;
+    
+    //Stores the cube"s past, present and future positions, yeah our cubes can see into the future😎
+    this.auto = true
+    this.pos = {
+        past : { x : this.x-this.xv, y : this.y-this.yv},
+        pres : { x: this.x, y: this.y, width : this.width},
+        futr : { x : this.x+this.xv, y : this.y+this.yv} 
+        
+    };
+    
+    this.selfNavigate = function(){
+        if (frame % gen(1, 5) == 0) {
+         let near = closest(you, triggers)
+          pointer.x = near.x+(c.xc-you.x);
+          pointer.y = near.y+(c.yc-you.y);
+          move(you);
+        }
+        
+    }
+    
+    
+    //Updates the cubes posituon
+    this.updatePos = function(){
+        
+        this.x += this.xv;
+        this.y += this.yv;
+  this.pos.futr.x = this.x + this.xv;
+  this.pos.futr.y = this.y + this.yv
+  this.pos.past.x = this.x - this.xv;
+  this.pos.past.y = this.y - this.yv
+  this.hasHit =0
+  if (this.auto){
+      this.selfNavigate();
+  }
+  if(mytig.check(this)==true){
+      //Rect(this.x-this.xv,this.y-this.yv,c.w,c.h,'rgba(240,240,255,0.95)')
+      bgcol='rgba(246,76,249,0.2017817016503387)'
+      bgcol='rgba(128,90,216,0.956679418280'
+      bgcol='grey'
+      if(blocks.length<300){
+   particles(me.x,me.y,20,'orange')
+   particles(this.x,this.y,20,'red')
+      }
+      this.xv+=gen(-30, 30)
+      this.yv+=gen(-30, 30)
+      this.speed+=0.05
+      cc.save();
+      cc.translate((you.x - c.hw)-you.xv, (you.y - c.hh)-you.yv)
+      edges(1000,1000,100,'red')
+      cc.restore()
+  }
+    }
+
+    //draws the cube
+    this.render = function() {
+        if (dist(you, me) > 1000) {
+         line(me.x, me.y, you.x, you.y, 'white')
+        }
+    cc.shadowColor = 'white'
+    cc.shadowBlur = 30
+    cc.save();
+    
+    //cordShow(this.x, this.y, 'white')
+    
+     circle(this.x, this.y, this.width*6, 'rgba(255,255,255,0.05)')
+     let dt = dist(you, me)
+    if (dt < this.width*6 ) {
+        pull(this,me,10)
+        cc.save();
+        //cc.translate((you.x - c.hw) - you.xv, (you.y - c.hh) - you.yv)
+        edges(100,100,50,'red')
+        cc.restore()
+        
+        cc.shadowColor = 'red'
+        cc.shadowBlur = 20
+        cc.lineWidth = 10
+        line(me.x, me.y, you.x, you.y, 'red')
+        cc.shadowColor = 'red'
+        cc.shadowBlur = 20
+        cc.lineWidth = 4
+        line(me.x, me.y, you.x, you.y, 'white')
+        cc.shadowColor = 'red'
+        cc.shadowBlur = 20
+        Rect(this.x, this.y, this.width, this.height, 'red')
+        Rect(this.x, this.y, this.width / 1.2, this.height / 1.2, 'white')
+     cc.shadowColor = 'red'
+     cc.shadowBlur = 20
+     Rect(this.x, this.y, this.width, this.height, 'red')
+     Rect(this.x, this.y, this.width / 1.2, this.height / 1.2, 'white')
+    } else{
+        Rect(this.x, this.y, this.width, this.height, this.color)
+        Rect(this.x - this.xv * 0.5, this.y - this.yv * 0.5, this.width / 1.2, this.height / 1.2, 'rgba(255,255,255,0.6)')
+        Rect(this.x - this.xv * 0.9, this.y - this.yv * 0.9, this.width / 1.6, this.height / 1.6, 'rgba(255,255,255,0.4)')
+        Rect(this.x - this.xv * 1.1, this.y - this.yv * 1.1, this.width / 2, this.height / 2, 'rgba(255,255,255,0.2)')
+    }
+        cc.save();
+        cc.translate((you.x - c.hw) - you.xv, (you.y - c.hh) - you.yv)
+        edges(20, 20, 50, 'black')
+        cc.restore()
+        
+    cc.restore()
+    }
+}
+
+function block(x, y, w, h, color = 'green') {
+ //The cube's position
+ this.x = x;
+ this.y = y;
+ this.xv = 0;
+ this.yv = 0;
+ 
+ //since you are a spuare, your height and width will be the same
+ this.width = w;
+ this.height = h;
+ this.size = w;
+ this.color = color;
+
+//timer?
+ this.timer = 0;
+
+ //Updates the cubes posituon
+ this.updatePos = function() {
+  --this.timer;
+  this.x += this.xv;
+  this.y += this.yv;
+ /* if(this.timer>10&&this.timer<90){
+  this.x += this.xv;
+  this.y += this.yv;
+  }*/
+  //this.width+=gen(-0.1,-0.2)
+  //this.height = this.width;
+ }
+
+ //draws the cube
+ this.render = function() {
+  cc.shadowColor = this.color
+  cc.shadowBlur = 20
+  //cc.save();
+ // cordShow(this.x, this.y, 'white')
+ if (this.width<0){
+     //this.width=gen(1,2)
+ }
+ 
+  Rect(this.x, this.y, this.width, this.height, this.color)
+  Rect(this.x-this.xv, this.y-this.yv, this.width/2,this.height/2, 'white')
+   
+   
+   //circle(this.x, this.y, this.width/2, this.color)
+ // cordShow(this.x, this.y)
+  //cc.restore()
+  
+ }
+
+}
+
+let dir = 0
+
+function limit(who){
+    let treshX = 0.6;
+    let treshY = 0.6;
+    if(who.xv>treshX){
+        who.xv-=who.friction;
+    } else if(who.xv<-treshX){
+        who.xv+=who.friction;
+    } else if (who.xv>-treshX&&who.xv<treshX){
+        who.xv=0
+        pointer.x = null
+        pointer.y= null
+    }
+    if (who.yv > treshY) {
+     who.yv -= who.friction;
+    } else if (who.yv < -treshY) {
+     who.yv += who.friction;
+    } else {
+     who.yv = 0
+     pointer.x = null
+     pointer.y= null
+    }
+}
+var bg = get('exp')
+
+//This is you☕
+var you = new player(c.xc, c.yc-200, 20, 'white')
+you.auto = !confirm("''Ok' if you wana play the game ^_^\n...or if you want the game to play itself, 'Camcel' 0_0")
+//denoball
+var ball = new demoball(c.xc, c.yc, 10, 'white')
+//MotherBlock
+var me = new block(c.xc,c.yc,250,40,'yellow')
+me.timer=100000
+blocks.push(me)
+var mytig = new trigger();
+mytig.sizing(me);
+mytig.attach(me);
+
+get('gc').addEventListener('touchmove', function event(event) {
+ pointer.x = event.changedTouches[0].pageX
+ pointer.y = event.changedTouches[0].pageY
+ move(you);
+ })
+
+//What happens when the screen is tapped
+function touchHandler(){
+    tapHandler();
+    move(you)
+}
+
+//Tapping the screen
+function tapHandler(){
+    
+}
+
+//Move the player
+function move(who) {
+//    get('dc').currentTime=0
+    //get('exp').play();
+     if(who.hasHit<6){
+     who.xv = (-(c.xc - pointer.x)/who.speed)*(c.h/c.w)*5
+     who.yv = (-(c.yc - pointer.y)/who.speed)*6
+     who.hasHit++
+     }
+     line(you.x,you.y,pointer.x,pointer.y,'white')
+    }
+
+for(i=0; i<300; ++i){
+    let b = new trigger(gen(-c.w, c.w*2), gen(-c.h, c.h*2), gen(20, 100), gen(20, 100))
+    b.color = pickColor();
+    b.xv = gen(-(you.xv/2), you.xv/2)
+    b.yv = gen(-(you.yv/2), you.yv)
+    triggers.push(b)
+}
+
+function particles(x, y, am, fill){
+    for(i=0; i<am; ++i){
+        let b = new block(x, y,         gen(5, 10), gen(5,10))
+        b.color = fill;
+        b.xv = gen(-(you.xv/2), you.xv)+gen(-2,2)
+        b.yv = gen(-(you.yv / 2), you.yv)+gen(-2,2)
+        b.timer= gen(100, 200)
+        blocks.push(b)
+    }
+}
+
+function closest(who, array){
+    let closest= array[0]
+    for(i=0; i<array.length; ++i){
+        if (dist(who, array[i])<dist(who,closest)){
+            closest = array[i]
+        }
+    }
+        return closest;
+    
+}
+
+
+bgcol='black'
+
+screen = 2
+//Thaemain game loop
+function run() {
+ start = performance.now();
+    adjustCanvas();
+    ++frame;
+    clear()
+    if (screen == 1){
+    Rect(c.xc, c.yc, c.w, c.h, bgcol)
+    
+    
+    
+    }else if(screen == 2){
+    Rect(c.xc, c.yc, c.w, c.h, bgcol)
+    
+    if(triggers.length>0){
+    cc.save();
+    cc.translate(-(you.x-c.hw), -(you.y-c.hh))
+    let near = closest(you, triggers)
+    line(you.x, you.y, near.x, near.y)
+    pull(near, you, 1)
+    cordShow(near.x, near.y, 'white',20,1, near.width,near.height)
+    
+    
+    you.updatePos();
+    you.render();
+    limit(you)
+ 
+    
+    
+    for(i=0; i<triggers.length; ++i){
+        triggers[i].update();
+        triggers[i].show();
+        if (triggers.length < 21) {
+            cc.lineWidth=0.5
+         line(you.x, you.y, triggers[i].x, triggers[i].y, 'white')
+         cc.lineWidth=1
+        }
+        if (triggers[i].check(you)){
+        triggers.splice(i,1);
+        you.hasHit=0
+        if (you.xv>0){
+            you.xv+=gen(0.1,0.2)
+        } else {
+            you.xv-=gen(0.2,0.2)
+        }
+        if (you.yv > 0) {
+         you.yv += gen(0.1, 0.2)
+        } else {
+         you.yv -= gen(0.1, 0.2)
+        }
+        if(blocks.length<200){
+        particles(you.x, you.y,10, 'white',10);
+        if (Math.abs(you.xv) > 20 || Math.abs(you.yv) > 20) {
+         Rect(you.x - you.xv, you.y - you.yv, w, h, 'rgba(255, 255, 255, 0.5)')
+        }
+        
+        if (triggers.length < 100) {
+         bgcol = pickColor();
+        }
+            
+        }
+        }
+        
+    }
+    
+    for (i = blocks.length-1; i>-1; --i) {
+     blocks[i].updatePos();
+     blocks[i].render();
+     if (blocks[i].timer<=0) {
+      blocks.splice(i, 1);
+     }
+    }
+    mytig.show()
+cc.strokeStyle='white'
+//cc.strokeRect(0,0,c.w,c.h)
+cc.restore();
+    
+    
+    cordShow(pointer.x, pointer.y, 'white',100,1)
+    
+    
+    if (frame%1 == 0){
+ dif = Math.floor((performance.now()-start))
+    }
+        fps = 1000/dif
+        Math.floor(fps)
+    cc.strokeStyle = 'white';
+ cc.strokeRect(10,10,20,100);
+    let col;
+    if (fps<120){
+        col='red'
+        
+    } else if(fps<120){
+        col='yellow'
+        
+    } else{
+        col='#22FF22'
+        
+    }
+    
+    cc.fillStyle = col;
+    cc.fillRect(10,100-fps+120, 120, fps);
+ txt(triggers.length,c.xc,50,'20px Arial')
+ txt(blocks.length,c.xc,c.h-50,'20px Arial')
+ 
+ 
+}
+    if(triggers.length==0){
+  clear()
+        Rect(c.xc,c.yc,c.w,c.h)
+        Rect(c.xc,c.yc,c.w,c.h, 'rgba(255,265,255,0.1)')
+        ball.play();
+        txt('You Won!, Or was it the AI 0_0', c.xc, c.yc, '20px Arial', '#33ff33')
+     //move(ball)
+        
+    }
+    }
+    requestAnimationFrame(run);
+}
+
+run();
+
+//Sacred Color
+//rgba(194,155,232,1.6371102219417184)
+
+//Hytale Green
+//rgba(178,228,79,0.91219229180779)
+
+//some other nice color
+//rgba(128,90,216,0.956679418280482)rgba(197,105,62,0.3113283796672722)
+
+//'rgba(65,39,59,0.9)'
+
+
+  }            
+        </script>
+    </body>
+</html>

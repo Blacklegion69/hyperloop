@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+ <head> 
+  <title>jaber</title> 
+  <link rel="preconnect" href="https://fonts.gstatic.com"> 
+  <link href="https://fonts.googleapis.com/css2?family=Potta+One&amp;display=swap" rel="stylesheet"> 
+ </head>
+ <style type="text/css" media="all">
+   body {
+    background-color:rgb(27,53,80);
+    position:sticky;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+div {
+    margin:100px;
+}
+.box input[type="text"] {
+    display:inline-block ;
+    width:200px;
+    height:20px;
+    position:center;
+    text-align:center;
+    outline:none;
+    background:none;
+    border:none;
+    font-family: 'Potta One', cursive;
+    border:2px solid rgb(0,227,255);
+    margin:0px;
+    padding:20px;
+    border-radius:30px;
+    color:rgb(0,255,204);
+    box-shadow:1px 1px 10px .2px rgb(0,255,193);
+    transition: .5s;
+}
+.box input[type="submit"] {
+    width:90px;
+    height:30px;
+    display: inline-block;
+    text-align:center;
+    outline:none;
+    background:none;
+    border:none;
+    font-family: 'Potta One', cursive;
+    border:2px solid rgb(0,227,255);
+    max-height:90px;
+    color:rgb(0,255,134);
+    border-radius:30px;
+    font-family: 'Potta One', cursive;
+    box-shadow:1px 1px 10px .2px rgb(0,255,170);
+}
+.box input[type="text"]:hover{
+    transform: scale(1.2);
+    font-weight:30px;
+    box-shadow:1px 1p, 10px .2px rgb(129,255,0);
+}
+@media (max-width:500px) {
+  .box {
+    transform: scale(1.4);
+  }
+}
+@media (max-width:1000px) {
+  .body {
+    display: block;
+    
+  }
+  .box {
+    transform: scale(2.4);
+    top: 50px;
+  }
+}
+ </style>
+ <body> 
+  <div class="box"> 
+   <form action="https://www.google.com/search" method="GET"> 
+    <input type="text" name="q" placeholder="search here"> 
+    <input type="submit" value="search"> 
+   </form> 
+  </div> 
+ </body>
+</html>

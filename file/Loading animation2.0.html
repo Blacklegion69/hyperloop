@@ -1,0 +1,119 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="" content="">
+    <title></title>
+<style type="text/css" media="all">
+  * {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+  body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+    .animationcombo {
+    width: 200px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+  }
+  .animation {
+    height: 50px;
+    right: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  .animation-1 {
+    height: 50px;
+    right: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotatez(180deg);
+  }
+  .animation > div {
+    width: 16px;
+    height: 68px;
+    background: black;
+    margin: 1px;
+  }
+  .animation-1 > div {
+    width: 16px;
+    height: 68px;
+    background: black;
+    margin: 1px;
+  }
+  .dot1 {
+    animation: animate 0.9s linear infinite 0s;
+  }
+  .dot2 {
+    animation: animate 0.9s linear infinite 0.1s;
+  }
+  .dot3 {
+    animation: animate 0.9s linear infinite 0.2s;
+  }
+  .dot4 {
+    animation: animate 0.9s linear infinite 0.3s;
+  }
+  .dot5 {
+    animation: animate 0.9s linear infinite 0.4s;
+  }
+  .dot6 {
+    animation: animate 0.9s linear infinite 0.5s;
+  }
+  .dot7 {
+    animation: animate 0.9s linear infinite 0.6s;
+  }
+  .dot8 {
+    animation: animate 0.9s linear infinite 0.7s;
+  }
+  .dot9 {
+    animation: animate 0.9s linear infinite 0.8s;
+  }
+  .dot10 {
+    animation: animate 0.9s linear infinite 0.9s;
+  }
+  @keyframes animate {
+    100% {
+      transform: rotatex(180deg);
+    }
+  }
+</style>
+  </head>
+  <body>
+    <div class="animationcombo">
+        <div class="animation">
+        <div class="dot1"></div>
+        <div class="dot2"></div>
+        <div class="dot3"></div>
+        <div class="dot4"></div>
+        <div class="dot5"></div>
+        <div class="dot6"></div>
+        <div class="dot7"></div>
+        <div class="dot8"></div>
+        <div class="dot9"></div>
+        <div class="dot10"></div>
+      </div>
+        <div class="animation-1">
+        <div class="dot1"></div>
+        <div class="dot2"></div>
+        <div class="dot3"></div>
+        <div class="dot4"></div>
+        <div class="dot5"></div>
+        <div class="dot6"></div>
+        <div class="dot7"></div>
+        <div class="dot8"></div>
+        <div class="dot9"></div>
+        <div class="dot10"></div>
+      </div>
+      </div>
+
+  </body>
+</html>

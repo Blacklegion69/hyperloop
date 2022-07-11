@@ -1,0 +1,95 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="" content="">
+    <title></title>
+<style type="text/css" media="all">
+  * {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+  body {
+    background-color: rgba(18,28,58,1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .container {
+    width: 200px;
+    padding: 10px;
+    color: white;
+    font-size: 3em;
+    position: relative;
+    display: flex;
+    background: rgba(18,28,58,1);
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: 3s;
+    border-radius: 4px;
+  }
+  .box {
+    width: 100%;
+    height: 4px;
+    border-radius: 3px;
+    background-color: rgba(255,255,255,1);
+    position: relative;
+    border: .1px solid gold;
+    overflow: hidden;
+  }
+  span {
+    width: 10px;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(18,28,58,1);
+    border: .1px solid black;
+    border-radius: 3px;
+    left: -15px;
+    animation: animate 2s ease infinite ;
+  }
+  @keyframes animate {
+    100% {
+      left: 110%;
+    }
+  }
+  .box1 {
+    position: relative;
+    z-index: 10;
+    -webkit-text-stroke: 2px red;
+  }
+  .container::before {
+    content: "  ";
+    position: absolute;
+    width: 40px;
+    height: 550px;
+    background: -webkit-linear-gradient(rgb(0,204,255) , rgb(230,0,255));
+    animation: animate1 3s linear infinite;
+    
+  }
+  @keyframes animate1 {
+    100% {
+      transform: rotatez(360deg);
+      filter: hue-rotate(360deg);
+    }
+  }
+  .container::after {
+    position: absolute;
+    content: "  ";
+    inset: 3px;
+    border-radius: 4px;
+    background-color: rgba(18,28,58,1);
+  }
+</style>
+  </head>
+  <body>
+   <div class="container">
+     <div class="box1">
+         contact
+          <div class="box">
+               <span></span>
+          </div>
+     </div>
+   </div> 
+  </body>
+</html>

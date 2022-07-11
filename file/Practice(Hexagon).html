@@ -1,0 +1,36 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <title>
+      My practice website
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abel&family=Abril+Fatface&family=Acme&family=Open+Sans&family=Palette+Mosaic&family=Roboto&display=swap" rel="stylesheet">
+  </head>
+  <body>
+   <div class="polygon"></div>
+   <div class="polygon"></div>
+   <div class="polygon"></div>
+   <div class="polygon"></div>
+   <div class="polygon"></div>
+  </body>
+  <style>
+    body {
+      background-color: gray;
+    }
+    div.polygon {
+      width: 100px;
+      background-color: white;
+      height: 110px;
+      clip-path: polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);
+      margin: auto;
+      
+    }
+    div.polygon:hover {
+      display: block;
+      position: relative;
+      transform:scale(0.89);
+    }
+  </style>
+</html>

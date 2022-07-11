@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>UFO</title>
+    </head>
+<style>
+    *{
+    margin:0px;
+    padding:0px;
+    
+}
+body {
+    background:black;
+    transform:translate(-630px,0px);
+    animation:move 30s linear;
+}
+@keyframes move{
+    0%{transform:scale(0.04)}
+    10%{transform:scale(1)}
+    20%{transform:translate(-630px,0px);}
+     70%{transform:translate(-630px,0px);}
+    100%{transform:translate(-460px, 0px);}
+}
+#image{ 
+
+}
+#bcircle{
+    height:300px;
+    width:90px;
+    border-radius:50%;
+    position:absolute;
+    transform:translate(850px, -550px)
+    skew(16deg);
+    animation:bcircle 4s linear;
+    animation-delay:7s;
+    
+    
+}
+@keyframes bcircle{
+0%{}
+    20%{background:yellow;}
+    35%{background:gold;box-shadow:-25px -10px 40px snow,25px 10px 40px snow,inset 20px  10px 22px tomato;}
+    90%{background:yellow;box-shadow:5px 2px 6px gray,inset 20px 10px 22px tomato ;}
+    100%{}
+}
+#spaceship{
+    height:70px;
+    width:250px;
+    border-radius:60px;
+    position:absolute ;
+    background:;
+    margin:auto;
+    top:250px;
+    left:660px;
+    animation:spaceship 12s linear;
+    animation-delay:9s;
+}
+@keyframes spaceship{
+    40%{background:snow;box-shadow:inset -12px 16px 30px yellow ;}
+    99%{background:snow;box-shadow:inset -12px 16px 30px yellow}
+}
+#shead{
+    height:27px;
+    width:180px;
+    border-radius:90px 90px 0 0;
+    position:absolute ;
+    margin:auto;
+    right:0px;
+    left:685px;
+    top:223px;
+    background:;
+    animation:shead 12s linear ;
+    animation-delay:9s;
+}
+@keyframes shead{
+    40%{background:skyblue;}
+    99%{background:skyblue;}
+}
+#firebox{
+    height:40px;
+    width:70px;
+    border-radius:40px 5px 5px 40px;
+    position:absolute ;
+    margin:auto;
+    left:847px;
+    top:260px;
+    animation:firebox 12s linear 9s;
+}
+@keyframes firebox{
+    40%{background:purple}
+    70%{background:purple}
+    99%{background:purple}   
+}
+#fire{
+    height:50px;
+    width:80px;
+    border-radius:41px 0 ;
+    position:absolute;
+    background:;
+    left:915px;
+    top:260px;
+    transform:rotate(32deg);
+    animation:fire 13.5s linear ;
+    animation-delay:7s;
+}
+@keyframes fire{
+29%{background:none;}
+    30%{background:gold;transform:scale(1);transform:rotate(32deg)}
+    41%{background:white;transform:scale(2);transform:rotate(32deg)}
+    42%{background:gold;transform:scale(0.5);transform:rotate(32deg)}
+    43%{background:white;transform:scale(2);transform:rotate(32deg)}
+    44%{background:gold;transform:scale(0.5);transform:rotate(32deg)}
+45%{background:white;transform:scale(2);transform:rotate(32deg)}
+46%{background:gold;transform:scale(0.5);transform:rotate(32deg)}
+47%{background:white;transform:scale(2);transform:rotate(32deg)}
+48%{background:gold;transform:scale(0.5);transform:rotate(32deg)}
+49%{background:white;transform:scale(2);transform:rotate(32deg)}
+50%{background:gold;transform:scale(0.5);transform:rotate(32deg)}
+51%{background:white;transform:scale(2);transform:rotate(32deg)}
+52%{background:gold;transform:scale(0.5);transform:rotate(32deg)}
+53%{background:white;transform:scale(2);transform:rotate(32deg)}
+54%{background:gold;transform:scale(0.5);transform:rotate(32deg)}
+55%{background:white;transform:scale(2);transform:rotate(32deg)}
+56%{background:gold;transform:scale(0.5);transform:rotate(32deg)}
+57%{background:white;transform:scale(2);transform:rotate(32deg)}
+58%{background:gold;transform:scale(0.5);transform:rotate(32deg)}
+59%{background:white;transform:scale(2);transform:rotate(32deg)}
+60%{background:gold;transform:scale(0.5);transform:rotate(32deg)}
+61%{background:white;transform:scale(2);transform:rotate(32deg)}
+62%{background:gold;transform:scale(0.5);transform:rotate(32deg)}
+63%{background:white;transform:scale(2);transform:rotate(32deg)}
+64%{background:gold;transform:scale(0.5);transform:rotate(32deg)}
+66%{background:white;transform:scale(2);transform:rotate(32deg)}
+67%{background:gold;transform:scale(0.5);transform:rotate(32deg)}
+68%{background:white;transform:scale(2);transform:rotate(32deg)}
+69%{background:gold;transform:scale(0.5);transform:rotate(32deg)}
+70%{background:white;transform:scale(2);transform:rotate(32deg)}
+71%{background:gold;transform:scale(0.5);transform:rotate(32deg)}
+72%{background:white;transform:scale(2);transform:rotate(32deg)}
+73%{background:gold;transform:scale(0.5);transform:rotate(32deg)}
+74%{background:white;transform:scale(2);transform:rotate(32deg)}
+75%{background:gold;transform:scale(0.5);transform:rotate(32deg)}
+76%{background:white;transform:scale(2);transform:rotate(32deg)}
+77%{background:gold;transform:scale(0.5);transform:rotate(32deg)}
+78%{background:white;transform:scale(2);transform:rotate(32deg)}
+79%{background:gold;transform:scale(0.5);transform:rotate(32deg)}
+80%{background:white;transform:scale(2);transform:rotate(32deg)}
+81%{background:gold;transform:scale(0.5);transform:rotate(32deg)}
+82%{background:white;transform:scale(2);transform:rotate(32deg)}
+83%{background:gold;transform:scale(0.5);transform:rotate(32deg)}
+84%{background:white;transform:scale(2);transform:rotate(32deg)}
+85%{background:gold;transform:scale(0.5);transform:rotate(32deg)}
+86%{background:white;transform:scale(2);transform:rotate(32deg)}
+87%{background:gold;transform:scale(0.5);transform:rotate(32deg)}
+88%{background:white;transform:scale(2);transform:rotate(32deg)}
+89%{background:gold;transform:scale(0.5);transform:rotate(32deg)}
+90%{background:white;transform:scale(2);transform:rotate(32deg)}
+91%{background:gold;transform:scale(0.5);transform:rotate(32deg)}
+92%{background:white;transform:scale(2);transform:rotate(32deg)}
+93%{background:gold;transform:scale(0.5);transform:rotate(32deg)}
+94%{background:white;transform:scale(2);transform:rotate(32deg)}
+95%{background:gold;transform:scale(0.5);transform:rotate(32deg)}
+96%{background:white;transform:scale(2);transform:rotate(32deg)}
+97%{background:gold;transform:scale(0.5);transform:rotate(32deg)}
+98%{background:white;transform:scale(2);transform:rotate(32deg)}
+99%{background:gold;transform:scale(0.5);transform:rotate(32deg)}
+  100%{background:gold;transform:scale(1);transform:rotate(32deg)}
+}
+
+
+    
+#lightc,
+#lightb,
+#lightl,
+#lightr{
+    height:300px;
+    width: 90px;
+    top:320px;   
+    position:absolute ;
+    margin:auto;
+    background:;
+    left:;
+    top:;
+    overflow:hidden;
+    display:block;
+    opacity:1;
+}
+#lightc,
+#lightl,
+#lightr{
+    animation:lightclr 10s linear;
+    animation-delay:12s;
+}
+#lightb{
+    animation:lightb 10s linear;
+    animation-delay:12s;
+}
+@keyframes lightb{
+    50%{background:linear-gradient(yellow,yellow);}
+}
+@keyframes lightclr{
+    50%{background:linear-gradient(gold,yellow,yellow)}
+}
+#lightc{
+    left:740px;
+    background:;
+}
+#lightl{
+    left:670px;
+    transform:skew(-20deg);
+}
+#lightr{
+    left:810px;
+    transform:skew(20deg);
+}
+#lightb{
+    height:100px;
+    width:200px;
+    top:520px;
+    left:670px;
+    background:;
+}
+        
+        
+#ufobody{
+     height:170px;
+     width:300px;
+     border-radius:50%;
+     position:absolute ;
+     left:635px;
+     top:450px;
+     animation:ufobody 11s linear 15s;  
+}
+@keyframes ufobody{
+29%{background:none;}
+    40%{background:radial-gradient(circle,#4466ff,white);}
+    80%{left:635px;background:radial-gradient(circle,#4466ff,white);}
+    90%{left:190px;background:radial-gradient(circle,#4466ff,white);}
+    99%{background:radial-gradient(circle,#4466ff,white);}
+    100%{left:190px;}
+}
+#ufoh{
+    height:90px;
+    width:160px;
+    border-radius:50%;
+    left:702px;
+    top:430px;
+    position:absolute ;
+    background:;
+    animation:ufoh 11s linear 15s;
+    
+}
+@keyframes ufoh{
+   32%{background:none;} 
+   40%{background:#9999ff;}
+   80%{left:702px;}
+   90%{left:259px;}
+   99%{background:#9999ff;}
+   100%{left:259px;} 
+}
+#ring{
+    height:40px;
+    width:400px;
+    border-radius:50%;
+    position:absolute ;
+    left:580px;
+    top:500px;
+    animation:ring 11s linear 15s ;
+}
+@keyframes ring{
+    32%{background:none;}
+    40%{background:#ff2233;border-bottom:5px solid rgba(250,250,250.0.3);}
+    80%{left:580px;background:#ff2233;border-bottom:5px solid white}
+    90%{left:125px;background:#ff2233;border-bottom:5px solid white}
+    99%{background:#ff2233;border-bottom:5px solid white}
+    100%{left:125px;}
+}
+
+
+
+
+
+
+/*Thank You 💙 Very Much For Watching!!*/
+
+
+
+
+/*Any suggestions are most welcome.💙💜❤*/
+.
+</style>
+    <body>
+    <div class="hyper">
+      <img src="https://cff2.earth.com/uploads/2018/06/27113334/New-research-claims-it%E2%80%99s-highly-likely-that-aliens-don%E2%80%99t-exist-850x500.jpg"height="690px"width="1150px"id="image"/>
+<span id="bcircle">
+</span>
+<div id="shead"></div>
+<div id="spaceship"></div>
+<div id="fire"></div>
+<diiv id="firebox"></diiv>
+<div id="lightc"></div>
+<div id="lightl"></div>
+<div id="lightr"></div>
+<div id="lightb"></div>
+<div id="ufoh"></div>
+<div id="ufobody"></div>
+<div id="ring"></div>
+    </div>
+    </body>
+</html>

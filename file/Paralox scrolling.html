@@ -1,0 +1,58 @@
+<!-- created by : SwapniL -->
+<!--
+middle image is suggested by @CodyRaza (thanks)
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parallax</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Ubuntu', sans-serif;
+    }
+    .fix{
+      height: 100vh;
+      width: 100%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+    }
+    #top{
+      background-image: url('https://img.freepik.com/free-photo/milford-sound-new-zealand-travel-destination-concept_53876-42945.jpg?w=740');
+    }
+    #middle{
+      background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIkmJ81rLpq5l3bAfZ8KcKk5yC4k0_OU3_iQ&usqp=CAU');
+    }
+    #bottom{
+      background-image: url('https://img.freepik.com/free-photo/seeds-with-lit-bulb_1232-553.jpg?w=740');
+    }
+   .fix::after{
+      content: "SCROLL DOWN";
+      display: block;
+      height: 50px;
+      width: 200px;
+      position: relative;
+      top: calc(50% - 25px);
+      left: calc(50% - 100px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(255, 255, 255, 0.5);
+    } 
+  </style>
+</head>
+<body>
+  <div class="fix" id="top"></div>
+  <div class="fix" id="middle"></div>
+  <div class="fix" id="bottom"></div>
+</body>
+</html>
