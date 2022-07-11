@@ -39,4 +39,5 @@ let color = ("#"+hexcolor(""));
       complete: animationBlocks,
     });
   };
+  
 animationBlocks();
