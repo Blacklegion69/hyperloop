@@ -18,6 +18,8 @@ let color = ("#"+hexcolor(""));
     block.classList.add("block");
     block.style.backgroundColor = color;
   }
+  
+  
   const animationBlocks = () => {
     anime({
       targets: '.block',
@@ -36,8 +38,8 @@ let color = ("#"+hexcolor(""));
       delay: anime.stagger(10),
       complete: animationBlocks,
     });
+    
   };
-  
 animationBlocks();
 
 
@@ -67,3 +69,13 @@ const animation1 = document.querySelectorAll (".animation1")[0];
 });
 }
 animation();
+
+
+
+
+
+
+const loader = document.querySelectorAll ("#preloader")[0];
+window.addEventListener("load",function(){
+  loader.style.display = "none";
+})
