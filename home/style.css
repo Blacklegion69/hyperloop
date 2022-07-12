@@ -12,7 +12,7 @@ body {
   align-items: center;
   flex-direction: column;
   min-height: 100vh;
-  
+  background-color: black;
 }
 section {
   width: 100%;
@@ -50,7 +50,7 @@ header > h2 {
   backdrop-filter: blur( 7px );
   border-radius: 10px;
   border: 1px solid rgba( 255, 255, 255, 0.18 );
-
+  overflow: hidden;
 }
 .header > a {
   color: black;
