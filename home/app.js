@@ -21,13 +21,10 @@ let color = ("#"+hexcolor(""));
     anime({
       targets: '.block',
       translateX: function(){
-        return anime.random(-700,700);
+        return anime.random(-200,200);
       },
       translateY: function(){
-        return anime.random(-1000,1000);
-      },
-      translateZ: function(){
-        return anime.random(-500,500);
+        return anime.random(-50,50);
       },
       scale: function(){
         return anime.random(0.2,1.3);
