@@ -99,6 +99,12 @@ header:hover a {
   backdrop-filter: blur( 7px );
   border-radius: 10px;
   border: 1px solid rgba( 255, 255, 255, 0.18 );
+  animation: box 3s linear infinite;
+}
+@keyframes box {
+  100% {
+    filter: hue-rotate(360deg);
+  }
 }
 .headcontainer > .red {
   width: 10px;
@@ -119,4 +125,46 @@ b {
   font-weight: 900;
   font-size: 15px;
   position: relative;
+}
+.animation1par {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 50px;
+}
+.animation1 {
+  width: 60%;
+  height: 80vh;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(16,1fr);
+  transition: 0.4s;
+  transform: scale(0.5);
+  padding: 10px;
+}
+.box {
+  width: 50px;
+  height: 50px;
+  background: rgba( 225, 225, 225, 0.4 );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+.box:nth-child(3n+1) {
+    background-color: orange;
+}
+.animation1text {
+  width: 400px;
+  padding: 20px;
+  text-align: left;
+  font-weight: 200;
+  background: rgba( 225, 225, 225, 0.4 );
+  backdrop-filter: blur( 7px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+
 }

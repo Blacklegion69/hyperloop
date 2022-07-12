@@ -1,3 +1,4 @@
+
 var head = document.querySelectorAll (".head")[0];
 var blocks = document.querySelectorAll (".block")[0];
 let word = ["a","b","c","d","e","f","0","1","2","3","4","5","6","7","8","9"];
@@ -21,10 +22,10 @@ let color = ("#"+hexcolor(""));
     anime({
       targets: '.block',
       translateX: function(){
-        return anime.random(-200,200);
+        return anime.random(-600,600);
       },
       translateY: function(){
-        return anime.random(-50,50);
+        return anime.random(-500,500);
       },
       scale: function(){
         return anime.random(0.2,1.3);
@@ -38,3 +39,31 @@ let color = ("#"+hexcolor(""));
   };
   
 animationBlocks();
+
+
+const animation1 = document.querySelectorAll (".animation1")[0];
+
+  for (x=0; x<416; x++) {
+    const box = document.createElement ("div");
+    box.classList.add("box");
+    animation1.appendChild (box);
+  }
+
+ function animation(){
+  anime({
+  targets: '.box',
+  scale: [
+    {value: .1, easing: 'easeOutSine', duration: 500},
+    {value: 1, easing: 'easeInOutQuad', duration: 1200}
+  ], 
+  delay: anime.stagger(200, {grid: [16,30], from: 'center'}),
+  easing: 'easeInOutQuad',
+  duration:1000,
+  //backgroundColor: ["#c2c2c2","#00ff49","#00f1ff","#ff00c3","#00ffae"],
+  loop:true,
+//  rotate: anime.stagger("1turn"),
+  direction: "alternate",
+  complete:animation,
+});
+}
+animation();
