@@ -56,12 +56,12 @@ const animation1 = document.querySelectorAll (".animation1")[0];
     {value: .1, easing: 'easeOutSine', duration: 500},
     {value: 1, easing: 'easeInOutQuad', duration: 1200}
   ], 
-  delay: anime.stagger(200, {grid: [16,30], from: 'center'}),
+  delay: anime.stagger(200, {grid: [16,26], from: 'center'}),
   easing: 'easeInOutQuad',
   duration:1000,
   //backgroundColor: ["#c2c2c2","#00ff49","#00f1ff","#ff00c3","#00ffae"],
   loop:true,
-//  rotate: anime.stagger("1turn"),
+  rotate: anime.stagger("5turn"),
   direction: "alternate",
   complete:animation,
 });
