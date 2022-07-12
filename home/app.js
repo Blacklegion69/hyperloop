@@ -12,6 +12,7 @@ let hexcolor = (y) => {
 };
 setInterval(hexcolor,2000);
 let color = ("#"+hexcolor(""));
+
   for (let x = 0; x < 200; x++) {
     var block = document.createElement ("div");
     head.appendChild (block);
@@ -69,6 +70,20 @@ const animation1 = document.querySelectorAll (".animation1")[0];
 });
 }
 animation();
+
+
+
+
+const temp = document.querySelectorAll (".temp")[0];
+ for (x=0; x<720; x++) {
+    const box = document.createElement ("div");
+    box.classList.add("tempbox");
+    temp.appendChild (box);
+    box.style.backgroundColor = color;
+  }
+
+
+
 
 
 

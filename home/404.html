@@ -10,9 +10,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- Font awesome -->
     <script src="https://kit.fontawesome.com/034032e716.js" crossorigin="anonymous"></script>
-
     <title>404</title>
 <style type="text/css" media="all">
+@import url("https://dl.dropbox.com/s/u67q2id0kold786/loadinganimation.css?dl=0");
+
+@import url("https://dl.dropbox.com/s/a6ld88kj4hytcp2/gridanimation.css?dl=0");
  * {
   margin: 0;
   padding: 0;
@@ -20,12 +22,11 @@
   font-family: 'Lato', sans-serif;
 }
 body {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
   min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 section {
   width: 100%;
@@ -86,9 +87,28 @@ header:hover .header {
 header:hover a {
   display: block;
 }
+.main {
+  width: 80%;
+  padding: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+   background: rgba( 225, 225, 225, 0.4 );
+  backdrop-filter: blur( 7px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  font-size: 20px;
+  
+}
 </style>
   </head>
   <body>
+    <div id="preloader">
+      <div class="content">
+        Loading...
+      </div>
+    </div>
     <header>
       <h2>
         Hyperloop
@@ -100,8 +120,14 @@ header:hover a {
         <span href="#">@</span>
       </div>
     </header>
+    <div class="main">
     <h1>Error</h1>
     <h1>Page Not found</h1>
+    </div>
+    
+    
+<script src="https://dl.dropbox.com/s/4h3f3zksnyn738l/loadinganimation.js?dl=0" type="text/javascript" charset="utf-8"></script>
 
+<script src="https://dl.dropbox.com/s/76b3oadeiu8r7m2/gridanimation.js?dl=0" type="text/javascript" charset="utf-8"></script>
   </body>
 </html>

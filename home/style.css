@@ -1,3 +1,4 @@
+
 * {
   margin: 0;
   padding: 0;
@@ -11,6 +12,7 @@ body {
   align-items: center;
   flex-direction: column;
   min-height: 100vh;
+  
 }
 section {
   width: 100%;
@@ -447,3 +449,22 @@ b {
     z-index: 3;
   }
   
+  
+.temp {
+  display: grid;
+  grid-template-columns: repeat(20,1fr);
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 0px 20px 0px 20px;
+}
+.tempbox {
+  width: 50px;
+  height: 50px;
+  background: rgba( 225, 225, 225, 0.4 );
+  border-radius: 10px;
+}
+.tempbox:nth-child(3n+1) {
+    background-color: #3e41c9;
+    opacity: 50%;
+}
