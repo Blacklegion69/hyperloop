@@ -13,7 +13,7 @@ let hexcolor = (y) => {
 setInterval(hexcolor,2000);
 let color = ("#"+hexcolor(""));
 
-  for (let x = 0; x < 200; x++) {
+  for (let x = 0; x < 150; x++) {
     var block = document.createElement ("div");
     head.appendChild (block);
     block.classList.add("block");
