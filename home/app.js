@@ -92,5 +92,6 @@ const temp = document.querySelectorAll (".temp")[0];
 
 const loader = document.querySelectorAll ("#preloader")[0];
 window.addEventListener("load",function(){
-  loader.style.display = "none";
-})
+  // loader.style.display = "none";
+    loader.style.transform = "scale(0)";
+});

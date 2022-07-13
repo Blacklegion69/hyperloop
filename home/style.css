@@ -17,6 +17,8 @@ body {
 section {
   width: 100%;
   height: 100vh;
+  position: relative;
+  
 }
 header {
   width: 80%;
@@ -66,6 +68,10 @@ header > h2 {
   font-size: 20px;
   margin: 5px;
   text-decoration: none;
+  color: black;
+}
+.header > span > a {
+  color: black;
 }
 header:hover .header {
   width: 200px;
@@ -174,7 +180,7 @@ b {
   #preloader {
     width: 100%;
     height: 100vh;
-    background-color: white;
+    background-color: black;
     position: fixed;
     display: flex;
     justify-content: center;
@@ -182,9 +188,8 @@ b {
     z-index: 1000;
     top: 0px;
     overflow: hidden;
+    transition: 0.5s;
   }
- 
- 
  
 #preloader > div:nth-child(even){
     border-top: 3px solid transparent;
@@ -518,6 +523,29 @@ b {
   overflow: hidden;
   position: re;
 }
+.tempmain::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: rgba(255,255,255,1);
+  border-radius: 50%;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+  transition: 0.5s;
+  
+}
+.tempmain:hover::before {
+  width: 100%;
+  height: 100%;
+  border-radius: 0px;
+  top: 0px;
+  right: 0px;
+}
+.tempmain > p {
+  z-index: 3;
+}
 .tempmain > p:nth-child(1) {
   font-size: 70px;
   
@@ -526,4 +554,14 @@ b {
   font-size: 30px;
   font-weight: 900;
   text-align: center;
+}
+.animejs {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  border: 10px solid black;
+}
+.animejs > iframe {
+  width: 100%;
+  height: 100vh;
 }
