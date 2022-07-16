@@ -21,6 +21,8 @@ let color = ("#"+hexcolor(""));
   }
   
   
+  
+  
   const animationBlocks = () => {
     anime({
       targets: '.block',
