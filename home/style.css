@@ -4,6 +4,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Lato', sans-serif;
+  transition: 0.5s;
 }
 body {
   position: relative;
@@ -182,7 +183,7 @@ b {
   #preloader {
     width: 100%;
     height: 100vh;
-    background-color: black;
+    background-color: white;
     position: fixed;
     display: flex;
     justify-content: center;
@@ -192,10 +193,27 @@ b {
     overflow: hidden;
     transition: 0.5s;
   }
+  #preloader::before {
+    content: " ";
+    position: absolute;
+    width: 0px;
+    height: 00px;
+    background-color: #d5d5d5;
+    border-radius: 50%;
+    animation: prebef 1s linear forwards;
+  }
+  @keyframes prebef {
+    100% {
+      width: 100%;
+      height: 100%;
+      border-radius: 0px;
+    }
+  }
    svg {
     width: 330px;
     margin: 0px auto;
     position: absolute;
+    transform: scale(1.4);
   }
   path {
     stroke: #000000;
@@ -204,7 +222,8 @@ b {
     stroke-dashoffset: 600px;
     stroke-linecap: round;
     stroke-linejoin: round;
-    animation: animate 2.9s ease-in forwards;
+    animation: animate 4s ease-in forwards;
+    animation-delay: 1s;
     
   }
   @keyframes animate {
