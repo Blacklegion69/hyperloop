@@ -190,257 +190,52 @@ b {
     overflow: hidden;
     transition: 0.5s;
   }
- 
-#preloader > div:nth-child(even){
-    border-top: 3px solid transparent;
-    border-bottom: 3px solid transparent;
-  }
-  .box0 {
-    width: 300px;
-    height: 300px;
-    border: 3px dashed #0de4e6;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    animation: boxpositive 10s linear infinite;
-  }
-  .box1 {
-    width: 290px;
-    height: 290px;
-    border: 3px dashed #0de4e6;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: boxnegative 10s linear infinite;
+   svg {
+    width: 330px;
+    margin: 0px auto;
     position: absolute;
   }
-  .box2 {
-    width: 280px;
-    height: 280px;
-    border: 3px dashed #0de4e6;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: boxpositive 10s linear infinite;
-    position: absolute;
-  }
-  .box3 {
-    width: 270px;
-    height: 270px;
-    border: 3px dashed #0de4e6;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: boxnegative 10s linear infinite;
-    position: absolute;
-  }
-  .box4 {
-    width: 260px;
-    height: 260px;
-    border: 3px dashed #0de4e6;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: boxpositive 10s linear infinite;
-    position: absolute;
-  }
-  .box5 {
-    width: 250px;
-    height: 250px;
-    border: 3px dashed #0de4e6;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: boxnegative 10s linear infinite;
-    position: absolute;
-  }
-  .box6 {
-    width: 240px;
-    height: 240px;
-    border: 3px dashed #0de4e6;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: boxpositive 10s linear infinite;
-    position: absolute;
-  }
-  .box7 {
-    width: 230px;
-    height: 230px;
-    border: 3px dashed #0de4e6;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: boxnegative 10s linear infinite;
-    position: absolute;
-  }
-  .box8 {
-    width: 220px;
-    height: 220px;
-    border: 3px dashed #0de4e6;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: boxpositive 10s linear infinite;
-    position: absolute;
-  }
-  .box9 {
-    width: 210px;
-    height: 210px;
-    border: 3px dashed #0de4e6;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: boxnegative 10s linear infinite;
-    position: absolute;
-  }
-    .box10 {
-    width: 200px;
-    height: 200px;
-    border: 3px dashed #0de4e6;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: boxpositive 10s linear infinite;
-    position: absolute;
-  }
-  .box11 {
-    width: 190px;
-    height: 190px;
-    border: 3px dashed #0de4e6;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: boxnegative 10s linear infinite;
-    position: absolute;
-  }
-    .box12 {
-    width: 180px;
-    height: 180px;
-    border: 3px dashed #0de4e6;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: boxpositive 10s linear infinite;
-    position: absolute;
-  }
-  .box13 {
-    width: 170px;
-    height: 170px;
-    border: 3px dashed #0de4e6;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: boxnegative 10s linear infinite;
-    position: absolute;
-  }  
-  .box14 {
-    width: 160px;
-    height: 160px;
-    border: 3px dashed #0de4e6;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: boxpositive 10s linear infinite;
-    position: absolute;
-  }
-  .box15 {
-    width: 150px;
-    height: 150px;
-    border: 3px dashed #0de4e6;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: boxnegative 10s linear infinite;
-    position: absolute;
+  path {
+    stroke: #000000;
+    stroke-width: 1.4px;
+    stroke-dasharray: 600px;
+    stroke-dashoffset: 600px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    animation: animate 2.9s ease-in forwards;
     
   }
-  .box16 {
-    width: 140px;
-    height: 140px;
-    border: 3px dashed #0de4e6;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: boxpositive 10s linear infinite;
-    position: absolute;
-  }
-  .box17 {
-    width: 130px;
-    height: 130px;
-    border: 3px dashed #0de4e6;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: boxnegative 10s linear infinite;
-    position: absolute;
-    
-  }
-   .box18 {
-    width: 120px;
-    height: 120px;
-    border: 3px dashed #0de4e6;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: boxpositive 10s linear infinite;
-    position: absolute;
-  }
-  .box19 {
-    width: 110px;
-    height: 110px;
-    border: 3px dashed #0de4e6;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: boxnegative 10s linear infinite;
-    position: absolute;
-    
-  }
-   .box20 {
-    width: 100px;
-    height: 100px;
-    border: 3px dashed #0de4e6;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: boxpositive 10s linear infinite;
-    position: absolute;
-  }
-  @keyframes boxnegative {
-    100% {
-      transform: rotatez(-360deg);
-      filter: hue-rotate(360deg);
+  @keyframes animate {
+    from {
+      fill: transparent;
+    }
+    to {
+      fill: #000000;
+      stroke-dashoffset: 0px;
     }
   }
-  @keyframes boxpositive {
-    100% {
-      transform: rotatez(360deg);
-      filter: hue-rotate(-360deg);
-    }
-  }
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   .content {
     width: 135px;
     height: 135px;
