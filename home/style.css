@@ -185,30 +185,16 @@ b {
     height: 100vh;
     background-color: white;
     position: fixed;
-    display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1000;
-    top: 0px;
+    top: 0;
+    left: 0;
     overflow: hidden;
+    display: flex;
     transition: 0.5s;
   }
-  #preloader::before {
-    content: " ";
-    position: absolute;
-    width: 0px;
-    height: 00px;
-    background-color: #d5d5d5;
-    border-radius: 50%;
-    animation: prebef 1s linear forwards;
-  }
-  @keyframes prebef {
-    100% {
-      width: 100%;
-      height: 100%;
-      border-radius: 0px;
-    }
-  }
+ 
    svg {
     width: 330px;
     margin: 0px auto;
@@ -222,7 +208,7 @@ b {
     stroke-dashoffset: 600px;
     stroke-linecap: round;
     stroke-linejoin: round;
-    animation: animate 4s ease-in forwards;
+    animation: animate 3s ease-in forwards;
     animation-delay: 1s;
     
   }

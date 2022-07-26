@@ -85,24 +85,10 @@ const temp = document.querySelectorAll (".temp")[0];
   }
 
 
-
-
-
-
-
-
-
 const loader = document.querySelectorAll ("#preloader")[0];
- /*
-  window.addEventListener("load",function(){
-    loader.style.display = "none";
-  })
-  */
-  function load() {
-      setTimeout(function(){
-      loader.style.display = "none";
-      loader.style.transform = "scale(0)";
-      // loader.style.borderRadius = "50%" ;
-      },5100);
-  };
- 
+window.addEventListener ("load",function(){
+  setTimeout(function() {
+     loader.style.top ="-100vh";
+  }, 3000);
+});
+
